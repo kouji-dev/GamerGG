@@ -9,22 +9,16 @@ export const metadata = {
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-})
+    variable: '--font-base',
+    subsets: ['latin'],
+    display: 'swap'
+});
 
 export default function RootLayout({ children }: {
   children: ReactNode;
 }) {
   return (
-      <html lang="en">
-        <style global>
-          {
-            `:root {
-              --font-base: ${inter.style.fontFamily}
-            }`
-          }
-        </style>
+      <html lang="en" className={inter.variable}>
         <body>{children}</body>
       </html>
   );

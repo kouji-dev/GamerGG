@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -5,6 +7,7 @@ module.exports = {
   ],
   theme: {
     colors: {
+      transparent: 'transparent',
       red: '#EE204D',
       yellow: '#FFFF9F',
       orange: '#ED9121',
@@ -15,7 +18,12 @@ module.exports = {
       white: '#FFFFFF',
       rose: '#A42469',
       metal: '#1B252D',
-      glass: 'rgba(255, 250, 240, 0.1)'
+      metal2: '#2F2B39',
+      glass: 'rgba(255, 250, 240, 0.1)',
+      gray: colors.gray,
+      social: {
+        discord: '#5865F2'
+      },
     },
     fontFamily: {
       'sans': ['ui-sans-serif', 'system-ui'],
@@ -36,9 +44,11 @@ module.exports = {
       caption: ['10px', '10px'],
       paragraph: ['16px', '19.36px'],
       body: ['16px', '19.36px'],
+      breadcrumbs: ['14px', '16.94px'],
     },
     backgroundImage: {
-      "red-blue": 'linear-gradient(96.79deg, rgba(238, 32, 77, 0.7) 6.36%, #512888 121.55%)'
+      "red-blue": 'linear-gradient(96.79deg, rgba(238, 32, 77, 0.7) 6.36%, #512888 121.55%)',
+      'discord-pattern': "url('/public/discord-server.jpeg')"
     },
     extend: {
       spacing: {
@@ -54,7 +64,7 @@ module.exports = {
         "btn-large": '12px 24px',
       },
       borderRadius: {
-        DEFAULT: '0.25em',
+        DEFAULT: '1em',
         xs: '0.5em',
         sm: '1em',
         md: '1.5em',
