@@ -3,6 +3,7 @@ import {Typography} from "@/ui";
 import {Group} from "@/ui/icons";
 import {Avatar} from "@/ui/Avatar";
 import {Chip} from "@/ui/Chip";
+import Link from "next/link";
 
 const BOOSTERS = [
     {name: 'DUOLEVELING', rank: 1, game: 'lol', systemRank: 'legend'},
@@ -34,11 +35,11 @@ export const TopBoosters = () => {
                     <Typography variant='h6' weight='bold' transform='capitalize'breakLine>Top Boosters</Typography>
                     <Typography variant='subtitle'>Our highest performing boosters.</Typography>
                 </div>
-                <Group/>
+                <Link href='/client-area/boosters'><Group/></Link>
             </CardHeader>
             <ul className='mt-4 flex flex-col gap-[10px]'>
                 {BOOSTERS.map(({name, rank, game, systemRank}) => (
-                    <li key={name} className='flex justify-between'>
+                    <li key={name} className='flex justify-between items-center h-[60px]'>
                         <div className='flex justify-center items-center'>
                             <Avatar className='bg-rose mr-4'/>
                             <div className='flex flex-col'>

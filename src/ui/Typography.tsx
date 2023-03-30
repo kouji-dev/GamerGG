@@ -16,7 +16,9 @@ type TypographyVariants =
     | 'btn-small'
     | 'btn-medium'
     | 'btn-large'
-    | 'breadcrumbs';
+    | 'breadcrumbs'
+    | 'table-body'
+    | 'table-head'
 
 const TEXT_TAILWIND_CLASS_MAPPER: Record<TypographyVariants, string> = {
     h1: 'text-h1',
@@ -33,6 +35,8 @@ const TEXT_TAILWIND_CLASS_MAPPER: Record<TypographyVariants, string> = {
     'btn-small': 'text-btn-small',
     'btn-medium': 'text-btn-medium',
     'btn-large': 'text-btn-large',
+    'table-body': 'text-table-body',
+    'table-head': 'text-table-head',
 }
 
 type TypographyWeights =

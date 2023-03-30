@@ -17,7 +17,7 @@ export const Button: FC<ButtonProps> = (props) => {
     const {
         variant = 'primary',
         size = 'small',
-        label = 'button',
+        label,
         leftIcon,
         rightIcon,
         className
@@ -37,6 +37,10 @@ export const Button: FC<ButtonProps> = (props) => {
         className
     )
     return (
-        <button className={cls}>{label}</button>
+        <button className={cls}>
+            {leftIcon}
+            {label}
+            {rightIcon}
+        </button>
     )
 }

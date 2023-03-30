@@ -45,6 +45,8 @@ module.exports = {
       paragraph: ['16px', '19.36px'],
       body: ['16px', '19.36px'],
       breadcrumbs: ['14px', '16.94px'],
+      'table-body': ['14px', '19.36px'],
+      'table-head': ['14px', '16.94px'],
     },
     backgroundImage: {
       "red-blue": 'linear-gradient(96.79deg, rgba(238, 32, 77, 0.7) 6.36%, #512888 121.55%)',

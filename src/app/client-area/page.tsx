@@ -3,6 +3,7 @@ import {UserSpent} from "@/app/client-area/user-spent";
 import {TopBoosters} from "@/app/client-area/top-boosters";
 import {OngoingOrder} from "@/app/client-area/ongoing-order";
 import {DiscordServer} from "@/app/client-area/discord-server";
+import {OrdersList} from "@/app/client-area/orders-list";
 
 export default function ClientAreaPage() {
   return (
@@ -17,6 +18,7 @@ export default function ClientAreaPage() {
           <div className='flex flex-col flex-1 gap-[40px]'>
               <OngoingOrder/>
               <DiscordServer/>
+              <OrdersList/>
           </div>
       </div>
   )

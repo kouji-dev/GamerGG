@@ -2,11 +2,14 @@ import {FC} from "react";
 import {CommonUiComponentProps} from "@/ui/common";
 import clsx from "clsx";
 
-export type AvatarProps = {} & CommonUiComponentProps
+export type AvatarProps = {
+    label?: string;
+} & CommonUiComponentProps
 
 export const Avatar: FC<AvatarProps> = (props) => {
     const {
-        className
+        className,
+        label = 'A'
     } = props;
 
     const cls = clsx(
@@ -15,7 +18,7 @@ export const Avatar: FC<AvatarProps> = (props) => {
     )
     return (
         <div className={cls}>
-            A
+            {label}
         </div>
     )
 }

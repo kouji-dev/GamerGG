@@ -29,14 +29,12 @@ const routes = [
 ]
 
 const NavigationMenu = () => {
-    const segment = useSelectedLayoutSegment();
-
     return (
-        <nav>
+        <nav className='w-full'>
             <ul className='flex flex-col gap-[10px]'>
                 {
                     routes.map(({route, label, icon}) => (<li key={route}>
-                        <Link href={`/client-area${route}`} replace={false} className='flex gap-[20px] py-2 px-8 items-center'>
+                        <Link href={`/client-area${route}`} replace={false} className='flex gap-[20px] py-2 pl-2 pr-8 items-center justify-start'>
                             {icon}
                             <Typography variant='body' transform='capitalize'>{label}</Typography>
                         </Link>
