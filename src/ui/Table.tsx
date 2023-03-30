@@ -44,6 +44,7 @@ export const Table: FC<TableProps> = (props) => {
             <table {...getTableProps()} className={cls}>
                 <thead>
                 {headerGroups.map(headerGroup => (
+                    // eslint-disable-next-line react/jsx-key
                     <tr {...headerGroup.getHeaderGroupProps()} className='text-left flex'>
                         {headerGroup.headers.map(column => {
                             const {
@@ -51,6 +52,7 @@ export const Table: FC<TableProps> = (props) => {
                                 maxWidth
                             } = column;
                             return (
+                                // eslint-disable-next-line react/jsx-key
                                 <th {...column.getHeaderProps()} align={column.id === 'actions' ? 'center' : 'left'} style={{width, maxWidth}}>{column.render('Header')}</th>
                             )
                         })}
@@ -61,12 +63,14 @@ export const Table: FC<TableProps> = (props) => {
                 {rows.map((row, i) => {
                     prepareRow(row);
                     return (
+                        // eslint-disable-next-line react/jsx-key
                         <tr {...row.getRowProps()}>
                             {row.cells.map(cell => {
                                 const {
                                     width,
                                     maxWidth
                                 } = cell.column;
+                                // eslint-disable-next-line react/jsx-key
                                 return <td {...cell.getCellProps()} align={cell.column.id === 'actions' ? 'center' : 'left'} style={{width, maxWidth}}>{cell.render('Cell')}</td>
                             })}
                         </tr>
