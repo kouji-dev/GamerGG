@@ -69,6 +69,8 @@ type TypographyProps = {
     transform?: TypographyTransform;
     disabled?: boolean
     breakLine?: boolean
+    inline?: boolean
+    underline?: boolean
 } & CommonUiComponentProps
 
 export const Typography: FC<PropsWithChildren<TypographyProps>> = (props) => {
@@ -79,6 +81,8 @@ export const Typography: FC<PropsWithChildren<TypographyProps>> = (props) => {
         transform = 'default',
         disabled = false,
         breakLine = false,
+        inline,
+        underline = false,
         className
     } = props;
 
@@ -88,9 +92,10 @@ export const Typography: FC<PropsWithChildren<TypographyProps>> = (props) => {
         WEIGHT_TAILWIND_CLASS_MAPPER[weight],
         TRANSFORM_TAILWIND_CLASS_MAPPER[transform],
         {
-            ['block']: ['h', 'p'].some((s) => variant.includes(s)) || breakLine,
+            ['block']: inline === undefined ? ['h', 'p'].some((s) => variant.includes(s)) || breakLine : !inline,
             ['tracking-wide']: variant === 'breadcrumbs',
             ['text-gray-400 pointer-events-none select-none']: disabled,
+            ['underline']: underline,
         },
         className
     );

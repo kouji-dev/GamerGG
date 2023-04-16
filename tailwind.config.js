@@ -48,10 +48,6 @@ module.exports = {
       'table-body': ['14px', '19.36px'],
       'table-head': ['14px', '16.94px'],
     },
-    backgroundImage: {
-      "red-blue": 'linear-gradient(96.79deg, rgba(238, 32, 77, 0.7) 6.36%, #512888 121.55%)',
-      'discord-pattern': "url('/public/discord-server.jpeg')"
-    },
     extend: {
       spacing: {
         DEFAULT: '4px',
@@ -78,6 +74,10 @@ module.exports = {
       boxShadow: {
         base: '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 5px 16px rgba(0, 0, 156, 0.5)',
         complex: '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 5px 16px rgba(0, 0, 156, 0.5), inset 0px 3px 12px #A42469, inset -2px 1px 2px #A42469, inset 0px -1px 2px #A42469, inset 2px 2px 6px #A42469',
+      },
+      backgroundImage: {
+        "red-blue": 'linear-gradient(96.79deg, rgba(238, 32, 77, 0.7) 6.36%, #512888 121.55%)',
+        'discord-pattern': "url('/public/discord-server.jpeg')"
       },
     },
   },

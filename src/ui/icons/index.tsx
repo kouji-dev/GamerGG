@@ -109,6 +109,32 @@ export const KeyboardArrowRight: FC<SvgIconProps> = createSvgIcon(
         </defs>
     </svg>
 )
+
+export const KeyboardArrowDown: FC<SvgIconProps> = createSvgIcon(
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_249_1123)">
+            <path d="M7.41 8.59003L12 13.17L16.59 8.59003L18 10L12 16L6 10L7.41 8.59003Z" fill="currentColor"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_249_1123">
+                <rect width="24" height="24" fill="white"/>
+            </clipPath>
+        </defs>
+    </svg>
+)
+export const KeyboardArrowUp: FC<SvgIconProps> = createSvgIcon(
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_335_264)">
+            <path d="M7.41 15.41L12 10.83L16.59 15.41L18 14L12 8L6 14L7.41 15.41Z" fill="currentColor"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_335_264">
+                <rect width="24" height="24" fill="white"/>
+            </clipPath>
+        </defs>
+    </svg>
+
+)
 export const Person: FC<SvgIconProps> = createSvgIcon(
     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path opacity="0.3" d="M15 12.625C16.4497 12.625 17.625 11.4497 17.625 10C17.625 8.55025 16.4497 7.375 15 7.375C13.5503 7.375 12.375 8.55025 12.375 10C12.375 11.4497 13.5503 12.625 15 12.625Z" fill="currentColor"/>
@@ -148,6 +174,40 @@ export const Menu: FC<SvgIconProps> = createSvgIcon(
         <defs>
             <clipPath id="clip0_248_5134">
                 <rect width="24" height="24" fill="white"/>
+            </clipPath>
+        </defs>
+    </svg>
+)
+
+export const Search: FC<SvgIconProps> = createSvgIcon(
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z" fill="currentColor"/>
+    </svg>
+)
+
+export const Support: FC<SvgIconProps> = createSvgIcon(
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_209_39)">
+            <path d="M29.75 17.3117C29.75 9.53417 23.715 4.25 17 4.25C10.3558 4.25 4.25001 9.42083 4.25001 17.3967C3.40001 17.8783 2.83334 18.785 2.83334 19.8333V22.6667C2.83334 24.225 4.10834 25.5 5.66668 25.5H7.08334V16.8583C7.08334 11.3758 11.5175 6.94167 17 6.94167C22.4825 6.94167 26.9167 11.3758 26.9167 16.8583V26.9167H15.5833V29.75H26.9167C28.475 29.75 29.75 28.475 29.75 26.9167V25.1883C30.5858 24.7492 31.1667 23.885 31.1667 22.865V19.6067C31.1667 18.615 30.5858 17.7508 29.75 17.3117Z" fill="currentColor"/>
+            <path d="M12.75 19.8333C13.5324 19.8333 14.1667 19.1991 14.1667 18.4167C14.1667 17.6343 13.5324 17 12.75 17C11.9676 17 11.3333 17.6343 11.3333 18.4167C11.3333 19.1991 11.9676 19.8333 12.75 19.8333Z" fill="currentColor"/>
+            <path d="M21.25 19.8333C22.0324 19.8333 22.6667 19.1991 22.6667 18.4167C22.6667 17.6343 22.0324 17 21.25 17C20.4676 17 19.8333 17.6343 19.8333 18.4167C19.8333 19.1991 20.4676 19.8333 21.25 19.8333Z" fill="currentColor"/>
+            <path d="M25.5 15.6258C24.82 11.5883 21.3067 8.5 17.0708 8.5C12.7783 8.5 8.16001 12.0558 8.52834 17.6375C12.0275 16.2067 14.6625 13.09 15.4133 9.29333C17.2692 13.0192 21.08 15.5833 25.5 15.6258Z" fill="currentColor"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_209_39">
+                <rect width="34" height="34" fill="white"/>
+            </clipPath>
+        </defs>
+    </svg>
+)
+export const Compaign: FC<SvgIconProps> = createSvgIcon(
+    <svg width="34" height="31" viewBox="0 0 34 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_206_147)">
+            <path d="M25.5 14.5833V17.4166H31.1667V14.5833H25.5ZM22.6667 23.9475C24.0267 24.9533 25.7975 26.285 27.2 27.3333C27.7667 26.5825 28.3333 25.8175 28.9 25.0666C27.4975 24.0183 25.7267 22.6866 24.3667 21.6666C23.8 22.4316 23.2333 23.1966 22.6667 23.9475ZM28.9 6.93329C28.3333 6.18246 27.7667 5.41746 27.2 4.66663C25.7975 5.71496 24.0267 7.04663 22.6667 8.06663C23.2333 8.81746 23.8 9.58246 24.3667 10.3333C25.7267 9.31329 27.4975 7.99579 28.9 6.93329ZM5.66668 11.75C4.10834 11.75 2.83334 13.025 2.83334 14.5833V17.4166C2.83334 18.975 4.10834 20.25 5.66668 20.25H7.08334V25.9166H9.91668V20.25H11.3333L18.4167 24.5V7.49996L11.3333 11.75H5.66668ZM21.9583 16C21.9583 14.1158 21.1367 12.4158 19.8333 11.2541V20.7316C21.1367 19.5841 21.9583 17.8841 21.9583 16Z" fill="currentColor"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_206_147">
+                <rect width="34" height="34" fill="white" transform="translate(0 -1)"/>
             </clipPath>
         </defs>
     </svg>

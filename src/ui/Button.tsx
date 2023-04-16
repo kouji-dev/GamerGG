@@ -32,7 +32,8 @@ export const Button: FC<ButtonProps> = (props) => {
             ['p-btn-medium text-btn-medium']: size === 'medium',
             ['p-btn-large text-btn-large']: size === 'large',
             ['bg-red-blue shadow-base']: variant === 'primary',
-            ['bg-metal']: variant === 'default'
+            ['bg-metal']: variant === 'default',
+            ['shadow-complex bg-blue']: variant === 'secondary'
         },
         className
     )

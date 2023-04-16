@@ -1,7 +1,13 @@
-import {Typography} from "@/ui/Typography";
+import {OrdersList} from "@/app/client-area/orders/orders-list";
+import {ActiveOrders} from "@/app/client-area/orders/active-orders";
 
-export default function ClientAreaPage() {
+export default function ClientAreaOrdersPage() {
   return (
-      <Typography>Orders</Typography>
+      <div className='w-full flex flex-col gap-[10px]'>
+        <ActiveOrders />
+        <div className='flex-1'>
+          <OrdersList />
+        </div>
+      </div>
   )
 }

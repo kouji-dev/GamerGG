@@ -14,19 +14,19 @@ const inter = Inter({
     subsets: ['latin'],
     display: 'swap'
 });
-export default function RootLayout({ children }: {
+export default function ClientAreaLayout({ children }: {
   children: ReactNode;
 }) {
   return (
       <html lang="en" className={inter.variable}>
-        <body className='bg-metal w-screen h-screen text-floral overflow-hidden flex'>
-        <Sidebar/>
-        <div className='flex flex-col flex-1 bg-metal2'>
-            <Header/>
-            <div className='overflow-y-auto flex-1 py-9 px-8'>
-                {children}
+        <body className='bg-metal w-screen h-screen text-floral overflow-hidden flex relative'>
+            <Sidebar/>
+            <div className='flex flex-col flex-1 bg-metal2'>
+                <Header/>
+                <div className='overflow-y-auto flex-1 py-9 px-8'>
+                    {children}
+                </div>
             </div>
-        </div>
         </body>
       </html>
   );
