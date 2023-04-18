@@ -1,8 +1,5 @@
 import {Inter} from 'next/font/google';
 import {ReactNode} from "react";
-import {Sidebar} from "@/app/sidebar";
-import {Header} from "@/app/header";
-import {PromoBanner} from "@/app/promo-banner";
 import './globals.css'
 
 export const metadata = {
@@ -22,14 +19,7 @@ export default function RootLayout({ children }: {
     return (
         <html lang="en" className={inter.variable}>
         <body className='bg-black w-screen h-screen text-floral overflow-hidden flex relative'>
-            <Sidebar/>
-            <div className='flex flex-col flex-1 relative'>
-                <Header/>
-                <PromoBanner/>
-                <div className='overflow-y-auto flex-1'>
-                    {children}
-                </div>
-            </div>
+            {children}
         </body>
         </html>
     );

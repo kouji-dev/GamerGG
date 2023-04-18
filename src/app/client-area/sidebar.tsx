@@ -2,12 +2,20 @@
 import {FC} from "react";
 import {Typography} from "@/ui/Typography";
 import {Button} from "@/ui";
-import {Discord, Facebook, Instagram, DashboardTwoTone, PaidTwoTone, PeopleTwoTone, RequestQuoteTwoTone} from "@/ui/icons";
-import {useSelectedLayoutSegment} from "next/navigation";
+import {
+    DashboardTwoTone,
+    Discord,
+    Facebook,
+    Instagram,
+    PaidTwoTone,
+    PeopleTwoTone,
+    RequestQuoteTwoTone
+} from "@/ui/icons";
 import Link from "next/link";
+
 export const Sidebar: FC<{}> = () => {
     return (
-        <div className='w-fit flex flex-col justify-between items-center p-4'>
+        <div className='w-fit flex flex-col justify-between items-center p-4 bg-metal'>
             <Logo/>
             <NavigationMenu/>
             <OrderAgainAd/>

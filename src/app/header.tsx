@@ -33,7 +33,7 @@ const NavBar = () => {
 const LoginBar = () => {
     return (
         <div className='w-[200px] flex justify-center'>
-            <Button label='Login' size='medium'/>
+            <Link href='/client-area'><Button label='Login' size='medium'/></Link>
         </div>
     )
 }
