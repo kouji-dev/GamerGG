@@ -1,0 +1,43 @@
+.hero1 {
+    animation: landingHeroAnimation1 16s infinite;
+}
+.hero2 {
+    animation: landingHeroAnimation2 16s infinite;
+}
+.hero3 {
+    animation: landingHeroAnimation3 16s infinite;
+}
+
+@keyframes landingHeroAnimation1 {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+}
+@keyframes landingHeroAnimation2 {
+    30% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+}
+@keyframes landingHeroAnimation3 {
+    60% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

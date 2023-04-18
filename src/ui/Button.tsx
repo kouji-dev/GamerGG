@@ -1,4 +1,4 @@
-import {FC, ReactNode} from "react";
+import {FC, PropsWithChildren, ReactNode} from "react";
 import clsx from "clsx";
 import {CommonUiComponentProps} from "@/ui/common";
 
@@ -13,11 +13,12 @@ type ButtonProps = {
     rightIcon?: ReactNode;
 } & CommonUiComponentProps
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
     const {
         variant = 'primary',
         size = 'small',
         label,
+        children,
         leftIcon,
         rightIcon,
         className
@@ -40,7 +41,7 @@ export const Button: FC<ButtonProps> = (props) => {
     return (
         <button className={cls}>
             {leftIcon}
-            {label}
+            {children || label}
             {rightIcon}
         </button>
     )

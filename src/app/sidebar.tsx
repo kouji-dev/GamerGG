@@ -22,7 +22,7 @@ export const Sidebar: FC<{}> = () => {
         <div className='h-full px-3 py-8 flex flex-col justify-between items-center bg-black shadow'>
             <Menu />
             <SocialLinks/>
-            <Support/>
+            <Link href='/support'><Support/></Link>
         </div>
     </div>
     )
@@ -32,9 +32,9 @@ const SocialLinks = () => {
 
     return (
         <div className='flex flex-col gap-[30px] px-2.5 py-1'>
-            <Facebook/>
-            <Instagram/>
-            <Discord/>
+            <Link href='/support'><Facebook/></Link>
+            <Link href='/instagram'><Instagram/></Link>
+            <Link href='/discord'><Discord/></Link>
         </div>
     )
 }
