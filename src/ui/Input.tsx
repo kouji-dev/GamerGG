@@ -19,14 +19,14 @@ export const Input: FC<InputProps> = (props) => {
         ...rest
     } = props;
 
-    const containerRootCls = 'flex w-fit rounded-[8px] bg-metal2 text-floral items-center px-2'
+    const containerRootCls = 'flex w-fit rounded-[8px] bg-layout-200 text-floral items-center px-2'
 
     const containerCls = clsx(
         containerRootCls,
         className
     )
 
-    const inputRootCls = 'bg-metal2 rounded-[8px] outline-none px-2 text-body h-[34px]'
+    const inputRootCls = 'bg-layout-200 rounded-[8px] outline-none px-2 text-body h-[34px]'
 
     const inputCls = clsx(
         inputRootCls,

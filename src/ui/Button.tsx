@@ -24,7 +24,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
         className
     } = props;
 
-    const rootCls = 'flex w-fit rounded-xxl font-base font-bold text-floral uppercase'
+    const rootCls = 'flex w-fit rounded-xxl font-base font-bold text-floral uppercase flex items-center'
 
     const cls = clsx(
         rootCls,

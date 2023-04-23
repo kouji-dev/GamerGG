@@ -4,7 +4,7 @@ import {Person} from "@/ui/icons";
 
 export const ActiveBoost = () => {
     return (
-        <Card className='w-[160px] h-[160px] rounded'>
+        <Card className='w-[160px] h-[160px]'>
             <CardHeader>
                 <Typography variant='subtitle' weight='black' transform='uppercase'>ALL</Typography>
                 <Person />

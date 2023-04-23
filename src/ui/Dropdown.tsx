@@ -24,9 +24,9 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = (props) => {
     const [open, setOpen] = useState(false);
     const [coords, setCoords] = useState({top: 0, left: 0});
 
-    const containerRootCls = 'w-fit rounded-[8px] bg-metal2 text-floral px-2 h-[34px] cursor-pointer';
-    const dropdownCls = 'flex justify-around items-center w-full h-full gap-[34px]'
-    const contentRootCls = 'absolute flex flex-col rounded-[8px] bg-metal2 text-floral p-2 shadow-md';
+    const containerRootCls = 'w-fit rounded-[8px] bg-layout-200 text-floral px-2 h-[34px] cursor-pointer';
+    const dropdownCls = 'flex justify-around items-center w-full h-full gap-lg'
+    const contentRootCls = 'absolute flex flex-col rounded-[8px] bg-layout-200 text-floral p-2 shadow-md';
 
     const containerCls = clsx(
         containerRootCls,

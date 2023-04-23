@@ -16,7 +16,7 @@ export const Chip: FC<PropsWithChildren<ChipProps>> = (props) => {
         size = 'small'
     } = props;
 
-    const rootCls = 'w-fit h-fit rounded-xs flex justify-center items-center font-bold cursor-pointer';
+    const rootCls = 'w-fit h-fit rounded-lg flex justify-center items-center font-bold cursor-pointer';
 
     const cls = clsx(
         rootCls,

@@ -31,7 +31,7 @@ export const Sidebar: FC<{}> = () => {
 const SocialLinks = () => {
 
     return (
-        <div className='flex flex-col gap-[30px] px-2.5 py-1'>
+        <div className='flex flex-col gap-lg px-2.5 py-1'>
             <Link href='/support'><Facebook/></Link>
             <Link href='/instagram'><Instagram/></Link>
             <Link href='/discord'><Discord/></Link>

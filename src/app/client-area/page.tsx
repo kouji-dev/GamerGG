@@ -7,15 +7,15 @@ import {OrdersSummaryList} from "@/app/client-area/orders-summary-list";
 
 export default function ClientAreaPage() {
   return (
-      <div className='w-full flex overflow-x-hidden gap-[40px]'>
-          <div className='w-[380px] flex flex-col gap-[40px]'>
+      <div className='w-full flex overflow-x-hidden gap-lg'>
+          <div className='w-[380px] flex flex-col gap-lg'>
               <div className='flex justify-between'>
                   <ActiveBoost/>
                   <UserSpent/>
               </div>
               <TopBoosters/>
           </div>
-          <div className='flex flex-col flex-1 gap-[40px]'>
+          <div className='flex flex-col flex-1 gap-lg'>
               <OngoingOrder/>
               <DiscordServer/>
               <OrdersSummaryList/>

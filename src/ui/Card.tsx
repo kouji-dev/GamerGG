@@ -11,7 +11,7 @@ export const Card: FC<PropsWithChildren<CardProps>> = (props) => {
     } = props
 
     const cls = clsx(
-        'bg-metal p-4 overflow-hidden',
+        'bg-layout-200 p-4 rounded-md overflow-hidden',
         className
     )
     return (

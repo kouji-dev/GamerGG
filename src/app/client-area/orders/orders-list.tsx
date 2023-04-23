@@ -6,7 +6,7 @@ import {Avatar} from "@/ui/Avatar";
 import {Button, Typography} from "@/ui";
 import {Chip} from "@/ui/Chip";
 import {getStatusCls} from "@/ui/utils/status";
-import {Menu, PaidTwoTone, Search} from "@/ui/icons";
+import {Menu, PaidTwoTone, Plus, Search} from "@/ui/icons";
 import {Card, CardHeader} from "@/ui/Card";
 import {Input} from "@/ui/Input";
 import {Dropdown, DropDownItem} from "@/ui/Dropdown";
@@ -18,14 +18,11 @@ export const OrdersList = () => {
                 Header: () => <Typography variant='table-head' transform='uppercase' weight='bold'>Game</Typography>,
                 accessor: 'game',
                 Cell: ({value}) => <Avatar label={value} className='bg-purple'/>,
-                maxWidth: 100
             },
             {
                 Header: () => <Typography variant='table-head' transform='uppercase' weight='bold'>Summary</Typography>,
                 accessor: 'summary',
-                Cell: ({value}) => <Typography variant='table-body'>{value}</Typography>,
-                maxWidth: 400,
-                width: 300
+                Cell: ({value}) => <Typography variant='table-body'>{value}</Typography>
             },
             {
                 Header: () => <Typography variant='table-head' transform='uppercase' weight='bold'>Id</Typography>,
@@ -35,26 +32,22 @@ export const OrdersList = () => {
             {
                 Header: () => <Typography variant='table-head' transform='uppercase' weight='bold'>Booster</Typography>,
                 accessor: 'booster',
-                Cell: ({value}) => <Typography variant='table-body'>{value}</Typography>,
-                width: 180
+                Cell: ({value}) => <Typography variant='table-body'>{value}</Typography>
             },
             {
                 Header: () => <Typography variant='table-head' transform='uppercase' weight='bold'>Status</Typography>,
                 accessor: 'status',
-                Cell: ({value}) => <Chip label={value} className={getStatusCls(value)}/>,
-                width: 140
+                Cell: ({value}) => <Chip label={value} className={getStatusCls(value)}/>
             },
             {
                 Header: () => <Typography variant='table-head' transform='uppercase' weight='bold'>price</Typography>,
                 accessor: 'price',
-                Cell: ({value}) => <Typography variant='table-body'>{value}</Typography>,
-                width: 120
+                Cell: ({value}) => <Typography variant='table-body'>{value}</Typography>
             },
             {
                 Header: () => <Typography variant='table-head' transform='uppercase' weight='bold'>created at</Typography>,
                 accessor: 'createdAt',
-                Cell: ({value}) => <Typography variant='table-body'>{value}</Typography>,
-                width: 200
+                Cell: ({value}) => <Typography variant='table-body'>{value}</Typography>
             },
             {
                 Header: () => <Typography variant='table-head' transform='uppercase' weight='bold'>Actions</Typography>,
@@ -138,7 +131,7 @@ export const OrdersList = () => {
                         Orders
                         <Typography variant='subtitle' className='align-super ml-2'>({data.length})</Typography>
                     </Typography>
-                    <PaidTwoTone/>
+                    <Button label='Order' leftIcon={<Plus className='!text-floral'/>}/>
                 </div>
                 <div className='w-full flex justify-between'>
                     <Input leftIcon={<Search className='!text-floral'/>} type='text' placeholder='Search'/>

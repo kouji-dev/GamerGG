@@ -2,6 +2,8 @@ import {FC} from "react";
 import {CommonUiComponentProps} from "@/ui/common";
 import {Column, useTable} from 'react-table';
 import clsx from "clsx";
+import {Simulate} from "react-dom/test-utils";
+import keyUp = Simulate.keyUp;
 
 export type TableProps = {
     data: Array<any>;
@@ -43,9 +45,10 @@ export const Table: FC<TableProps> = (props) => {
         <div className={wrapperClassName}>
             <table {...getTableProps()} className={cls}>
                 <thead>
-                {headerGroups.map(headerGroup => (
-                    // eslint-disable-next-line react/jsx-key
-                    <tr {...headerGroup.getHeaderGroupProps()} className='text-left flex'>
+                {headerGroups.map(headerGroup => {
+                    const {key: headerKey, ...headerProps} = headerGroup.getHeaderGroupProps();
+                    return (
+                        <tr key={headerKey} {...headerProps} className='text-left flex'>
                         {headerGroup.headers.map(column => {
                             const {
                                 width,
@@ -56,15 +59,16 @@ export const Table: FC<TableProps> = (props) => {
                                 <th {...column.getHeaderProps()} align={column.id === 'actions' ? 'center' : 'left'} style={{width, maxWidth}}>{column.render('Header')}</th>
                             )
                         })}
-                    </tr>
-                ))}
+                    </tr>)
+                })}
                 </thead>
                 <tbody {...getTableBodyProps()} className={bodyCls}>
                 {rows.map((row, i) => {
                     prepareRow(row);
+                    const {key: rowKey, ...rowProps} = row.getRowProps();
                     return (
                         // eslint-disable-next-line react/jsx-key
-                        <tr {...row.getRowProps()}>
+                        <tr key={rowKey} {...rowProps}>
                             {row.cells.map(cell => {
                                 const {
                                     width,

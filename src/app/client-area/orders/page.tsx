@@ -3,7 +3,7 @@ import {ActiveOrders} from "@/app/client-area/orders/active-orders";
 
 export default function ClientAreaOrdersPage() {
   return (
-      <div className='w-full flex flex-col gap-[10px]'>
+      <div className='w-full flex flex-col gap-lg'>
         <ActiveOrders />
         <div className='flex-1'>
           <OrdersList />

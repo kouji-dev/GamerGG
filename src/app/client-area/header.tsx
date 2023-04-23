@@ -9,7 +9,7 @@ export const Header: FC<{}> = () => {
     const paths = pathname.substring(1).split('/');
     return (
         <div className='pb-0.5 bg-red-blue shadow-lg'>
-            <div className='p-4 flex justify-between items-center bg-metal2 shadow'>
+            <div className='p-4 flex justify-between items-center bg-layout shadow'>
                 <Breadcrumbs items={paths}/>
                 <Avatar className='bg-rose'/>
             </div>

@@ -18,12 +18,21 @@ module.exports = {
       white: '#FFFFFF',
       rose: '#A42469',
       metal: '#1B252D',
-      metal2: '#2F2B39',
       glass: 'rgba(255, 250, 240, 0.1)',
       gray: colors.gray,
       social: {
         discord: '#5865F2'
       },
+      layout: {
+        DEFAULT: "#2F2B39",
+        100: "#2F2B39",
+        200: "#1B252D",
+      },
+      filter: {
+        DEFAULT: "rgba(255, 250, 240, 0.1)",
+        100: "rgba(255, 250, 240, 0.1)",
+        200: "rgba(16, 12, 8, 0.34)",
+      }
     },
     fontFamily: {
       'sans': ['ui-sans-serif', 'system-ui'],
@@ -50,25 +59,25 @@ module.exports = {
     },
     extend: {
       spacing: {
-        DEFAULT: '4px',
+        DEFAULT: '8px',
         xs: '4px',
         sm: '8px',
         md: '16px',
-        lg: '24px',
-        xl: '32px',
-        xxl: '52px',
+        lg: '32px',
+        xl: '64px',
+        xxl: '128px',
         "btn-small": '4px 8px',
-        "btn-medium": '8px 16px',
-        "btn-large": '12px 24px',
+        "btn-medium": '6px 10px',
+        "btn-large": '8px 12px',
       },
       borderRadius: {
-        DEFAULT: '1em',
-        xs: '0.5em',
-        sm: '1em',
-        md: '1.5em',
-        lg: '2em',
-        xl: '2.5em',
-        xxl: '3em',
+        DEFAULT: '8px',
+        xs: '4px',
+        sm: '8px',
+        md: '16px',
+        lg: '32px',
+        xl: '64px',
+        xxl: '128px',
         full: '9999px',
       },
       boxShadow: {
