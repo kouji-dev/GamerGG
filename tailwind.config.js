@@ -3,7 +3,8 @@ const colors = require('tailwindcss/colors')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/ui/**/*.{js,ts,jsx,tsx}",
+    "./src/app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     colors: {
@@ -11,6 +12,7 @@ module.exports = {
       red: '#EE204D',
       yellow: '#FFFF9F',
       orange: '#ED9121',
+      green: '#19BD47',
       purple: '#512888',
       blue: '#00009C',
       black: '#100C08',
@@ -66,9 +68,9 @@ module.exports = {
         lg: '32px',
         xl: '64px',
         xxl: '128px',
-        "btn-small": '4px 8px',
-        "btn-medium": '6px 10px',
-        "btn-large": '8px 12px',
+        "btn-small": '4px 10px',
+        "btn-medium": '6px 14px',
+        "btn-large": '8px 18px',
       },
       borderRadius: {
         DEFAULT: '8px',

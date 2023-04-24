@@ -26,7 +26,7 @@ export default function Home() {
                           <Typography variant='h3' weight='regular' transform='capitalize' className={`${homeStyles.hero2} opacity-0 absolute top-32 left-6`}>Relevant, Pin-Point</Typography>
                           <Typography variant='h1' weight='black' transform='uppercase' className={`${homeStyles.hero3} opacity-0 text-transparent bg-clip-text bg-gradient-to-r from-red to-blue absolute top-14 left-6`}>Packages</Typography>
                           <Typography variant='h4' weight='regular' transform='capitalize' className={`${homeStyles.hero3} opacity-0 absolute top-32 left-6`}>Best ready-to-buy in the market</Typography>
-                          <div className='flex justify-between w-[340px] absolute top-52 left-6'>
+                          <div className='flex justify-between w-fit gap-lg absolute top-52 left-6'>
                               <Link href='/boosting'><Button label='rank up' size='large'/></Link>
                               <Link href='/jobs'><Button variant='secondary' label='join us' size='large'/></Link>
                           </div>

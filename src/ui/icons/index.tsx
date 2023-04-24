@@ -305,3 +305,41 @@ export const Send: FC<SvgIconProps> = createSvgIcon(
         </defs>
     </svg>
 )
+export const Place: FC<SvgIconProps> = createSvgIcon(
+    <svg width="16" height="16" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_385_330)">
+            <path d="M12.3334 7.30004C12.3334 9.01337 10.9334 11.16 8.22675 13.64L8.00008 13.84L7.77341 13.6334C5.06675 11.16 3.66675 9.01337 3.66675 7.30004C3.66675 4.74004 5.54675 2.83337 8.00008 2.83337C10.4534 2.83337 12.3334 4.73337 12.3334 7.30004Z" fill="currentColor" fillOpacity="0.3"/>
+            <path d="M8.00008 1.83337C10.8001 1.83337 13.3334 3.98004 13.3334 7.30004C13.3334 9.51337 11.5534 12.1334 8.00008 15.1667C4.44675 12.1334 2.66675 9.51337 2.66675 7.30004C2.66675 3.98004 5.20008 1.83337 8.00008 1.83337ZM12.0001 7.30004C12.0001 4.88004 10.2334 3.16671 8.00008 3.16671C5.76675 3.16671 4.00008 4.88004 4.00008 7.30004C4.00008 8.86004 5.30008 10.9267 8.00008 13.3934C10.7001 10.9267 12.0001 8.86004 12.0001 7.30004ZM8.00008 8.50004C7.26675 8.50004 6.66675 7.90004 6.66675 7.16671C6.66675 6.43337 7.26675 5.83337 8.00008 5.83337C8.73342 5.83337 9.33342 6.43337 9.33342 7.16671C9.33342 7.90004 8.73342 8.50004 8.00008 8.50004Z" fill="currentColor"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_385_330">
+                <rect width="16" height="16" fill="white" transform="translate(0 0.5)"/>
+            </clipPath>
+        </defs>
+    </svg>
+)
+export const ArrowRight: FC<SvgIconProps> = createSvgIcon(
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_385_340)">
+            <path d="M22.6809 15.5834H5.66675V18.4167H22.6809V22.6667L28.3334 17L22.6809 11.3334V15.5834Z" fill="currentColor"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_385_340">
+                <rect width="34" height="34" fill="white"/>
+            </clipPath>
+        </defs>
+    </svg>
+)
+export const Star: FC<SvgIconProps> = createSvgIcon(
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_459_269)">
+            <path opacity="0.3" d="M8.00011 10.2666L5.49344 11.78L6.16011 8.92665L3.94678 7.00665L6.86678 6.75332L8.00011 4.06665L9.14011 6.75998L12.0601 7.01332L9.84678 8.93332L10.5134 11.7866L8.00011 10.2666Z" fill="currentColor"/>
+            <path d="M14.6668 6.16004L9.8735 5.74671L8.00016 1.33337L6.12683 5.75337L1.3335 6.16004L4.9735 9.31337L3.88016 14L8.00016 11.5134L12.1202 14L11.0335 9.31337L14.6668 6.16004ZM8.00016 10.2667L5.4935 11.78L6.16016 8.92671L3.94683 7.00671L6.86683 6.75337L8.00016 4.06671L9.14016 6.76004L12.0602 7.01337L9.84683 8.93337L10.5135 11.7867L8.00016 10.2667Z" fill="currentColor"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_459_269">
+                <rect width="16" height="16" fill="white"/>
+            </clipPath>
+        </defs>
+    </svg>
+)

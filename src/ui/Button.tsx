@@ -2,7 +2,7 @@ import { forwardRef, PropsWithChildren, ReactNode } from "react";
 import clsx from "clsx";
 import { CommonUiComponentProps } from "@/ui/common";
 
-export type ButtonVariants = "primary" | "secondary" | "default";
+export type ButtonVariants = "primary" | "secondary" | "default" | "success" | "warning" | "danger" | "info" | "ghosted";
 export type ButtonSizes = "small" | "medium" | "large";
 
 type ButtonProps = PropsWithChildren<
@@ -37,7 +37,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ["p-btn-medium text-btn-medium"]: size === "medium",
         ["p-btn-large text-btn-large"]: size === "large",
         ["bg-red-blue shadow-base"]: variant === "primary",
-        ["bg-metal"]: variant === "default",
+        ["bg-black"]: variant === "default",
+        ["bg-green"]: variant === "success",
+        ["bg-orange"]: variant === "warning",
+        ["bg-purple"]: variant === "info",
+        ["bg-red"]: variant === "danger",
+        ["bg-filter-200"]: variant === "ghosted",
         ["shadow-complex bg-purple"]: variant === "secondary",
         ["gap-xs"]: !!leftIcon
       },

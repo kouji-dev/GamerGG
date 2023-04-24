@@ -12,6 +12,7 @@ import {
     RequestQuoteTwoTone
 } from "@/ui/icons";
 import Link from "next/link";
+import {usePathname} from "next/navigation";
 
 export const Sidebar: FC<{}> = () => {
     return (
@@ -30,19 +31,22 @@ const Logo = () => {
 }
 
 const routes = [
-    {route: '', label: 'dashboard', icon: <DashboardTwoTone className='w-[30px]'/>},
-    {route: '/orders', label: 'orders', icon: <PaidTwoTone className='w-[30px]'/>},
-    {route: '/boosters', label: 'boosters', icon: <PeopleTwoTone className='w-[30px]'/>},
-    {route: '/payments', label: 'payments', icon: <RequestQuoteTwoTone className='w-[30px]'/>},
+    {route: '/client-area', label: 'dashboard', icon: <DashboardTwoTone className='w-[30px]'/>},
+    {route: '/client-area/orders', label: 'orders', icon: <PaidTwoTone className='w-[30px]'/>},
+    {route: '/client-area/boosters', label: 'boosters', icon: <PeopleTwoTone className='w-[30px]'/>},
+    {route: '/client-area/payments', label: 'payments', icon: <RequestQuoteTwoTone className='w-[30px]'/>},
 ]
 
 const NavigationMenu = () => {
+    const pathname = usePathname()
+
+    const navigationMenuItemCls = 'flex gap-[20px] py-2 pl-2 pr-8 items-center justify-start'
     return (
         <nav className='w-full'>
             <ul className='flex flex-col gap-[10px]'>
                 {
                     routes.map(({route, label, icon}) => (<li key={route}>
-                        <Link href={`/client-area${route}`} replace={false} className='flex gap-[20px] py-2 pl-2 pr-8 items-center justify-start'>
+                        <Link href={`${route}`} replace={false} className={`${navigationMenuItemCls} ${pathname === route ? '' : 'text-floral/60'}`}>
                             {icon}
                             <Typography variant='body' transform='capitalize'>{label}</Typography>
                         </Link>
