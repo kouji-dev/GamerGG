@@ -2,7 +2,7 @@
 import { OrderCard } from "@/app/client-area/orders/order-card";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-import "swiper/css";
+import "swiper/swiper.css";
 import "swiper/css/navigation";
 import { ArrowBack, ArrowForward } from "@/ui/icons";
 
@@ -14,6 +14,7 @@ export const ActiveOrders = () => {
     <div className="relative flex items-center justify-center">
       <div className="relative flex-auto w-[500px]">
         <Swiper
+          observer
           setWrapperSize={false}
           modules={[Navigation]}
           spaceBetween={10}

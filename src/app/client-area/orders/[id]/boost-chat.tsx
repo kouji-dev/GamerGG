@@ -22,7 +22,7 @@ export const BoostChat: FC<BoostChatProps> = (props) => {
             </div>
             <div className='bg-filter-200 min-h-[70px] flex justify-between items-center gap-md p-md'>
                 <Input className='!bg-filter-200 flex-auto' placeholder='Type something'/>
-                <Button leftIcon={<Send className='!text-floral'/>} label='send'/>
+                <Button size='medium' leftIcon={<Send className='!text-floral'/>} label='send'/>
             </div>
         </Card>
     )
