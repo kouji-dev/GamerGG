@@ -22,10 +22,10 @@ export const OrderCard: FC<OrderCardProps> = (props) => {
             </CardHeader>
             <div className='flex items-center gap-sm'>
                 <Avatar label='LOL' size='medium' className='bg-purple'/>
-                <div className='flex flex-col'>
+                <div className='flex flex-col gap-xs'>
                     <Typography variant='h6' weight='black'>Promotion from gold</Typography>
                     <Typography variant='subtitle' weight='black' className='text-orange'>League boosting</Typography>
-                    <Typography variant='table-body' className='flex items-center'>lol-121324 <Copy/></Typography>
+                    <Typography variant='table-body' className='flex items-center'>lol-121324 <Copy className='ml-sm'/></Typography>
                 </div>
             </div>
             <div className='flex justify-between items-center'>

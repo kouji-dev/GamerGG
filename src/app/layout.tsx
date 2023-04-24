@@ -18,6 +18,13 @@ export default function RootLayout({ children }: {
 }) {
     return (
         <html lang="en" className={inter.variable}>
+        <head>
+            <title>GamingGG</title>
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+            />
+        </head>
         <body className='bg-black w-screen h-screen text-floral overflow-hidden flex relative'>
             {children}
         </body>
