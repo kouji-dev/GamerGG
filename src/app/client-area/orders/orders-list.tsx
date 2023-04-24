@@ -142,7 +142,7 @@ export const OrdersList = () => {
         ], [])
     return (
         <Card className='rounded flex-1'>
-            <CardHeader className='bg-black -m-4 p-4 flex flex-col gap-[10px]'>
+            <CardHeader className='bg-filter-200 -m-4 p-4 flex flex-col gap-[10px]'>
                 <div className='w-full flex justify-between'>
                     <Typography variant='h5' weight='bold'>
                         Orders
