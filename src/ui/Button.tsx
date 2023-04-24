@@ -1,19 +1,19 @@
-import {FC, PropsWithChildren, ReactNode} from "react";
+import {FC, forwardRef, PropsWithChildren, ReactNode} from "react";
 import clsx from "clsx";
 import {CommonUiComponentProps} from "@/ui/common";
 
 export type ButtonVariants = 'primary' | 'secondary' | 'default';
 export type ButtonSizes = 'small' | 'medium' | 'large';
 
-type ButtonProps = {
+type ButtonProps = PropsWithChildren<{
     variant?: ButtonVariants;
     size?: ButtonSizes;
     label?: string;
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
-} & CommonUiComponentProps
+} & CommonUiComponentProps>
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     const {
         variant = 'primary',
         size = 'small',
@@ -39,10 +39,12 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
         className
     )
     return (
-        <button className={cls}>
+        <button ref={ref} className={cls}>
             {leftIcon}
             {children || label}
             {rightIcon}
         </button>
     )
-}
+})
+
+Button.displayName = 'Button'

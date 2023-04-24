@@ -1,20 +1,25 @@
 "use client"
-import {cloneElement, FC} from "react";
+import {cloneElement, FC, SVGProps} from "react";
 import {CommonUiComponentProps} from "@/ui/common";
 import clsx from "clsx";
 
 export type SvgIconProps = {
     height?: number;
     width?: number;
-} & CommonUiComponentProps
+    disabled?: boolean
+} & CommonUiComponentProps & SVGProps<any>
 
 const createSvgIcon = (Component: any) => (props: SvgIconProps) => {
     const {
         className,
+        disabled,
         ...rest
     } = props;
     const cls = clsx(
         'text-red cursor-pointer',
+        {
+            'text-metal': disabled
+        },
         className,
     )
 
@@ -221,6 +226,52 @@ export const Plus: FC<SvgIconProps> = createSvgIcon(
         </g>
         <defs>
             <clipPath id="clip0_358_270">
+                <rect width="24" height="24" fill="white"/>
+            </clipPath>
+        </defs>
+    </svg>
+)
+
+export const Eye: FC<SvgIconProps> = createSvgIcon(
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_429_300)">
+            <path opacity="0.3" d="M11.9999 6.5C8.20993 6.5 4.82993 8.63 3.17993 12C4.82993 15.37 8.19993 17.5 11.9999 17.5C15.7999 17.5 19.1699 15.37 20.8199 12C19.1699 8.63 15.7899 6.5 11.9999 6.5ZM11.9999 16.5C9.51993 16.5 7.49993 14.48 7.49993 12C7.49993 9.52 9.51993 7.5 11.9999 7.5C14.4799 7.5 16.4999 9.52 16.4999 12C16.4999 14.48 14.4799 16.5 11.9999 16.5Z" fill="currentColor"/>
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17.5C8.21 17.5 4.83 15.37 3.18 12C4.83 8.63 8.21 6.5 12 6.5C15.79 6.5 19.17 8.63 20.82 12C19.17 15.37 15.79 17.5 12 17.5ZM12 7.5C9.52 7.5 7.5 9.52 7.5 12C7.5 14.48 9.52 16.5 12 16.5C14.48 16.5 16.5 14.48 16.5 12C16.5 9.52 14.48 7.5 12 7.5ZM12 14.5C10.62 14.5 9.5 13.38 9.5 12C9.5 10.62 10.62 9.5 12 9.5C13.38 9.5 14.5 10.62 14.5 12C14.5 13.38 13.38 14.5 12 14.5Z" fill="currentColor"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_429_300">
+                <rect width="24" height="24" fill="white"/>
+            </clipPath>
+        </defs>
+    </svg>
+)
+export const ArrowForward: FC<SvgIconProps> = createSvgIcon(
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.0001 5.66663L15.0026 7.66413L22.9076 15.5833H5.66675V18.4166H22.9076L15.0026 26.3358L17.0001 28.3333L28.3334 17L17.0001 5.66663Z" fill="currentColor"/>
+    </svg>
+)
+export const ArrowBack: FC<SvgIconProps> = createSvgIcon(
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_441_260)">
+            <path d="M28.3333 15.5833H11.0925L19.0116 7.66413L17 5.66663L5.66663 17L17 28.3333L18.9975 26.3358L11.0925 18.4166H28.3333V15.5833Z" fill="currentColor"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_441_260">
+                <rect width="34" height="34" fill="white"/>
+            </clipPath>
+        </defs>
+    </svg>
+
+)
+
+export const Copy: FC<SvgIconProps> = createSvgIcon(
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clipPath="url(#clip0_255_534)">
+            <path opacity="0.3" d="M8 7L19 7V21H8L8 7Z" fill="currentColor"/>
+            <path d="M16 1L4 1C2.9 1 2 1.9 2 3L2 17H4L4 3L16 3V1ZM19 5L8 5C6.9 5 6 5.9 6 7L6 21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8L8 7L19 7V21Z" fill="currentColor"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_255_534">
                 <rect width="24" height="24" fill="white"/>
             </clipPath>
         </defs>

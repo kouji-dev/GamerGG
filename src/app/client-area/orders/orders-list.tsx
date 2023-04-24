@@ -1,15 +1,32 @@
 "use client"
 import {Table} from "@/ui/Table";
-import {useMemo} from "react";
+import {useMemo, useRef} from "react";
 import {Column} from "react-table";
 import {Avatar} from "@/ui/Avatar";
 import {Button, Typography} from "@/ui";
 import {Chip} from "@/ui/Chip";
 import {getStatusCls} from "@/ui/utils/status";
-import {Menu, PaidTwoTone, Plus, Search} from "@/ui/icons";
+import {Eye, Menu, Plus, Search} from "@/ui/icons";
 import {Card, CardHeader} from "@/ui/Card";
 import {Input} from "@/ui/Input";
 import {Dropdown, DropDownItem} from "@/ui/Dropdown";
+import {Popover} from "@/ui/Popover";
+import Link from "next/link";
+
+const Actions = ({id}: any) => {
+    const ref = useRef<HTMLButtonElement>(null);
+    return (
+        <>
+            <Button ref={ref} leftIcon={<Menu className='!text-floral' />}/>
+            <Popover anchorEl={ref}>
+               <Link href={`/client-area/orders/${id}`} className='flex items-center gap-sm'>
+                   <Eye/>
+                   <Typography>View</Typography>
+               </Link>
+            </Popover>
+        </>
+    )
+}
 
 export const OrdersList = () => {
     const columns = useMemo<Array<Column>>(
@@ -52,7 +69,7 @@ export const OrdersList = () => {
             {
                 Header: () => <Typography variant='table-head' transform='uppercase' weight='bold'>Actions</Typography>,
                 accessor: 'actions',
-                Cell: () => <Button leftIcon={<Menu className='!text-floral' />}/>
+                Cell: ({cell}: any) => <Actions id={cell.row.original.id}/>
             },
         ],
         []
@@ -71,7 +88,7 @@ export const OrdersList = () => {
             {
                 game: 'lol',
                 summary: 'Promotion from gold 1',
-                id: 'lol-1232',
+                id: 'lol-1233',
                 booster: 'Duoleveling',
                 price: '$14.56',
                 createdAt: new Date().toDateString(),

@@ -55,7 +55,7 @@ const NavigationMenu = () => {
 
 const OrderAgainAd = () => {
     return (
-        <div className='w-[250px] h-[200px] rounded bg-red-blue text-center flex flex-col justify-between p-5'>
+        <div className='w-[250px] h-[200px] rounded-md bg-red-blue text-center flex flex-col justify-between p-5'>
             <div className='flex flex-col gap-[10px]'>
                 <Typography variant='h5' weight='black'>Exclusive offers</Typography>
                 <Typography className='text-start' variant='body' weight='bold'>Many discounts personalized just for you!</Typography>

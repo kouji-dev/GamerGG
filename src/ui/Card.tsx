@@ -28,8 +28,7 @@ export const CardHeader: FC<PropsWithChildren<CardProps>> = (props) => {
     } = props
 
     const cls = clsx(
-        'flex justify-between items-center',
-        className
+        className || 'flex justify-between items-center',
     )
     return (
         <div className={cls}>
