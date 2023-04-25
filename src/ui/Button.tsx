@@ -1,8 +1,17 @@
-import { forwardRef, PropsWithChildren, ReactNode } from "react";
+import {forwardRef, PropsWithChildren, ReactNode} from "react";
 import clsx from "clsx";
-import { CommonUiComponentProps } from "@/ui/common";
+import {CommonUiComponentProps} from "@/ui/common";
 
-export type ButtonVariants = "primary" | "secondary" | "default" | "success" | "warning" | "danger" | "info" | "ghosted";
+export type ButtonVariants =
+  | "primary"
+  | "secondary"
+  | "default"
+  | "success"
+  | "warning"
+  | "danger"
+  | "info"
+  | "login"
+  | "ghosted";
 export type ButtonSizes = "small" | "medium" | "large";
 
 type ButtonProps = PropsWithChildren<
@@ -12,6 +21,7 @@ type ButtonProps = PropsWithChildren<
     label?: string;
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
+    full?: boolean;
   } & CommonUiComponentProps
 >;
 
@@ -25,10 +35,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       leftIcon,
       rightIcon,
       className,
+      full = false,
     } = props;
 
     const rootCls =
-      "flex w-fit rounded-xxl font-base font-bold text-floral uppercase flex items-center";
+      "flex items-center w-fit rounded-xxl font-base font-bold text-floral uppercase";
 
     const cls = clsx(
       rootCls,
@@ -44,7 +55,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ["bg-red shadow"]: variant === "danger",
         ["bg-filter-200 shadow"]: variant === "ghosted",
         ["shadow-complex bg-purple"]: variant === "secondary",
-        ["gap-xs"]: !!leftIcon
+        ["bg-filter-200 shadow !gap-md !rounded-sm"]: variant === "login",
+        ["gap-xs"]: !!leftIcon,
+        ["w-full"]: full,
       },
       className
     );
