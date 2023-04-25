@@ -10,7 +10,7 @@ export const BoostChat: FC<BoostChatProps> = (props) => {
 
     return (
         <Card className='flex-auto flex flex-col justify-between !p-0'>
-            <CardHeader className='bg-filter-200 -m-2 p-6 flex justify-between'>
+            <CardHeader className='bg-filter-200 -m-2 p-8 flex justify-between'>
                 <Typography variant='h6' weight='bold'>Boost Chat</Typography>
                 <div className='flex items-center gap-sm'>
                     <Person/>

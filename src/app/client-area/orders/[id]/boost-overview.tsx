@@ -2,7 +2,7 @@ import {FC} from "react";
 import {Card} from "@/ui/Card";
 import {Avatar} from "@/ui/Avatar";
 import {Button, Typography} from "@/ui";
-import {ArrowRight, Copy, Place, Star} from "@/ui/icons";
+import {ArrowRight, Copy, CreditCard, Delete, Edit, Place, Star} from "@/ui/icons";
 import {Chip} from "@/ui/Chip";
 import {getStatusCls} from "@/ui/utils/status";
 
@@ -58,8 +58,11 @@ export const BoostOverview: FC<BoostOverviewProps> = () => {
                 </div>
             </div>
             <div className='flex w-fit items-start gap-sm'>
-                <Button leftIcon={<Star className='!text-floral'/>} variant='default' label='rate booster'/>
-                <Button leftIcon={<Star className='!text-floral'/>} variant='success' label='review us'/>
+                {/*<Button leftIcon={<Star className='!text-floral'/>} variant='default' label='rate booster'/>*/}
+                {/*<Button leftIcon={<Star className='!text-floral'/>} variant='success' label='review us'/>*/}
+                <Button leftIcon={<Delete className='!text-floral'/>} variant='danger'/>
+                <Button leftIcon={<Edit className='!text-floral'/>} variant='default' label='edit'/>
+                <Button leftIcon={<CreditCard className='!text-floral'/>} label='complete payment'/>
             </div>
         </Card>
     )
