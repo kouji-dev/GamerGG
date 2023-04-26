@@ -3,7 +3,7 @@ import {useEffect} from "react";
 export const useClickOutside = (dom: any, callback: any) => {
     const handleClick = (e: any) => {
         if (dom && !dom.contains(e.target)) {
-            callback(e);
+            callback && callback(e);
         }
     };
     useEffect(() => {

@@ -1,4 +1,4 @@
-"use client"
+//"use client";
 import {FC} from "react";
 import {Typography} from "@/ui/Typography";
 import {Button} from "@/ui";

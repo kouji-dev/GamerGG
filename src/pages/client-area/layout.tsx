@@ -1,6 +1,6 @@
 import {ReactNode} from "react";
-import {Sidebar} from "@/app/client-area/sidebar";
-import {Header} from "@/app/client-area/header";
+import {Sidebar} from "@/pages/client-area/sidebar";
+import {Header} from "@/pages/client-area/header";
 
 export const metadata = {
   title: 'Client Area',

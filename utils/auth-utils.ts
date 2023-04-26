@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import {AUTH_OPTIONS} from "@/app/api/auth/[...nextauth]";
+import {AUTH_OPTIONS} from "@/pages/api/auth/[...nextauth]";
 
 export const getUserFromSession = async (
     req: NextApiRequest,

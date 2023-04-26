@@ -1,67 +1,75 @@
-import React, {FC, PropsWithChildren, useEffect, useState} from "react";
+import React, { FC, PropsWithChildren, useEffect, useState } from "react";
 import clsx from "clsx";
-import {CommonUiComponentProps} from "@/ui/common";
-import {Portal} from "@/ui/Portal";
+import { CommonUiComponentProps } from "@/ui/common";
+import { Modifier, usePopper } from "react-popper";
+import * as PopperJS from "@popperjs/core";
+import { TooltipArrowUp } from "@/ui/icons";
+import { useClickOutside } from "@/ui/utils/use-click-outside";
 
 type PopoverVariant = "default" | "secondary";
 
 type PopoverProps = {
-    variant?: PopoverVariant;
-    anchorEl?: any,
-    wrapperId?: string,
-    open?: boolean,
-    onClickOutside?: () => void
-} & CommonUiComponentProps
+  variant?: PopoverVariant;
+  anchorEl?: any;
+  wrapperId?: string;
+  open?: boolean;
+  options?: Omit<Partial<PopperJS.Options>, "modifiers"> & {
+    createPopper?: typeof PopperJS.createPopper;
+    modifiers?: ReadonlyArray<Modifier<any>>;
+  };
+} & CommonUiComponentProps;
 
 export const Popover: FC<PropsWithChildren<PopoverProps>> = (props) => {
-    const {
-        children,
-        variant = 'default',
-        anchorEl,
-        wrapperId= '',
-        onClickOutside
-    } = props;
-    const [coords, setCoords] = useState({top: 0, left: 0});
-    const [open, setOpen] = useState(false)
+  const { children, variant = "default", anchorEl, options } = props;
+  const [popperElement, setPopperElement] = useState<any>(null);
+  const [arrowElement, setArrow] = useState<any>(null);
+  const [show, setShow] = useState<any>(false);
+  const { styles, attributes } = usePopper(anchorEl, popperElement, {
+    placement: "bottom",
+    modifiers: [
+      {
+        name: "arrow",
+        options: {
+          element: arrowElement,
+          padding: 0,
+        },
+      },
+    ],
+    ...options,
+  });
+  useClickOutside(anchorEl, () => {
+    if (show) setShow(() => false);
+  });
+  const toggleTooltip = () => {
+    setShow((s: boolean) => !s);
+  };
 
-    useEffect(() => {
-        if (!anchorEl) return;
-        const element = anchorEl.current;
-        const rect = element!.getBoundingClientRect();
-        setCoords({
-            left: rect.x,
-            top: rect.y + window.scrollY + 34 + 5
-        });
-        element.addEventListener('click', () => {
-            setOpen((o) => !o);
-        })
-        return () => element.addEventListener('click', () => {
-            setOpen(false)
-        })
-    }, [anchorEl])
+  useEffect(() => {
+    if (!anchorEl) return;
+    const element = anchorEl;
+    element.addEventListener("click", () => {
+      toggleTooltip();
+    });
+    const removeListener = () => element.removeEventListener("click", () => {});
+    return removeListener();
+  }, [anchorEl]);
 
-    const contentRootCls = 'absolute flex flex-col rounded-[8px] bg-layout-200 text-floral p-2 shadow-md';
-    const contentCls = clsx(
-        contentRootCls,
-        {
-            'bg-purple': variant === 'secondary',
-        }
-    )
-    const content = open ? <div className={contentCls} style={{...coords, minWidth: window.getComputedStyle(anchorEl.current).width}}>{children}</div> : null;
+  const contentRootCls =
+    "flex flex-col rounded-xs bg-layout-200 text-floral p-2 shadow-md";
+  const contentCls = clsx(contentRootCls, {
+    "bg-purple": variant === "secondary",
+  });
+  const content = <div className={contentCls}>{children}</div>;
 
-    const handleClickOutside = (event: MouseEvent) => {
-        if (!anchorEl.current.contains(event.target)) {
-            setOpen(false)
-        }
-    }
-
-    if (!open) {
-        return null;
-    }
-
-    return (
-        <Portal wrapperId={wrapperId} onClickOutside={handleClickOutside}>
-            {content}
-        </Portal>
-    )
-}
+  return (
+    <div
+      ref={setPopperElement}
+      style={styles.popper}
+      {...attributes.popper}
+      className="relative flex flex-col items-center gap-[1px]"
+    >
+      {show && <TooltipArrowUp ref={setArrow} className="!text-metal" />}
+      {show && content}
+    </div>
+  );
+};

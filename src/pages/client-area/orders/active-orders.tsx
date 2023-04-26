@@ -1,5 +1,5 @@
-"use client";
-import { OrderCard } from "@/app/client-area/orders/order-card";
+////"use client";;
+import { OrderCard } from "@/pages/client-area/orders/order-card";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import { ArrowBack, ArrowForward } from "@/ui/icons";

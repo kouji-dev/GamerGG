@@ -1,6 +1,6 @@
-import {forwardRef, PropsWithChildren, ReactNode} from "react";
+import { forwardRef, PropsWithChildren, ReactNode } from "react";
 import clsx from "clsx";
-import {CommonUiComponentProps} from "@/ui/common";
+import { CommonUiComponentProps } from "@/ui/common";
 
 export type ButtonVariants =
   | "primary"
@@ -22,7 +22,8 @@ type ButtonProps = PropsWithChildren<
     leftIcon?: ReactNode;
     rightIcon?: ReactNode;
     full?: boolean;
-  } & CommonUiComponentProps
+  } & CommonUiComponentProps &
+    JSX.IntrinsicElements["button"]
 >;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -36,6 +37,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       rightIcon,
       className,
       full = false,
+      ...rest
     } = props;
 
     const rootCls =
@@ -62,7 +64,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className
     );
     return (
-      <button ref={ref} className={cls}>
+      <button ref={ref} className={cls} {...rest}>
         {leftIcon}
         {children || label}
         {rightIcon}

@@ -23,9 +23,11 @@
       "@/*": ["./src/*"],
       "@assets/*": ["./public/assets/*"],
       "@shared/*": ["./shared/*"],
+      "@components/*": ["./components/*"],
       "@utils/*": ["./utils/*"],
       "@prisma/*": ["./prisma/*"],
       "@prisma": ["./prisma/index.ts"],
+      "@lib/*": ["./lib/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -1,21 +1,8 @@
-"use client"
+//"use client";
 import {FC} from "react";
-import {Typography} from "@/ui/Typography";
-import {Button} from "@/ui";
-import {
-    Discord,
-    Facebook,
-    Instagram,
-    DashboardTwoTone,
-    PaidTwoTone,
-    PeopleTwoTone,
-    RequestQuoteTwoTone,
-    Menu, Support
-} from "@/ui/icons";
-import {useSelectedLayoutSegment} from "next/navigation";
+import {Discord, Facebook, Instagram, Menu, Support} from "@/ui/icons";
 import Link from "next/link";
-import {Breadcrumbs} from "@/ui/Breadcrumbs";
-import {Avatar} from "@/ui/Avatar";
+
 export const Sidebar: FC<{}> = () => {
     return (
     <div className='pr-0.5 bg-red-blue shadow-lg h-full'>
