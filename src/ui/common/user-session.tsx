@@ -1,5 +1,5 @@
 import {FC, useState} from "react";
-import {SessionContextValue} from "next-auth/src/react";
+import {SessionContextValue} from "next-auth/react";
 import {Avatar} from "@/ui/Avatar";
 import {Popover} from "@/ui/Popover";
 

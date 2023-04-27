@@ -2,7 +2,7 @@ import Image from "next/image";
 import image from "@assets/auth-wallpaper.jpg";
 import {GetServerSideProps} from "next";
 import {getCsrfToken} from "next-auth/react";
-import {LoginForm} from "@components/login/login-form";
+import {LoginForm} from "@/pages/login/login-form";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
