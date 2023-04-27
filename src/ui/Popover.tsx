@@ -29,8 +29,14 @@ export const Popover: FC<PropsWithChildren<PopoverProps>> = (props) => {
       {
         name: "arrow",
         options: {
-          element: arrowElement,
-          padding: 0,
+          element: arrowElement
+        },
+      },
+      {
+        name: "flip",
+        enabled: true,
+        options: {
+          rootBoundary: 'body',
         },
       },
     ],
@@ -65,7 +71,6 @@ export const Popover: FC<PropsWithChildren<PopoverProps>> = (props) => {
       ref={setPopperElement}
       style={styles.popper}
       {...attributes.popper}
-      className="relative flex flex-col items-center gap-[1px]"
     >
       {show && <TooltipArrowUp ref={setArrow} className="!text-metal" />}
       {show && content}

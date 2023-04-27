@@ -27,7 +27,7 @@ export const Sidebar: FC<{}> = () => {
 
 const Logo = () => {
 
-    return (<div className='w-[70px] h-[70px] rounded-full bg-orange'/>)
+    return (<Link href='/'><div className='w-[70px] h-[70px] rounded-full bg-orange'/></Link>)
 }
 
 const routes = [

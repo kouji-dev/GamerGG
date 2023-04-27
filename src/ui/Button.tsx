@@ -1,6 +1,6 @@
-import { forwardRef, PropsWithChildren, ReactNode } from "react";
+import {forwardRef, PropsWithChildren, ReactNode} from "react";
 import clsx from "clsx";
-import { CommonUiComponentProps } from "@/ui/common";
+import {CommonUiComponentProps} from "@/ui/common";
 
 export type ButtonVariants =
   | "primary"
