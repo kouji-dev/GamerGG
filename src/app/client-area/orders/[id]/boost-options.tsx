@@ -1,7 +1,13 @@
 import { FC } from "react";
 import { Card } from "@/ui/Card";
 import { Button, Typography } from "@/ui";
-import { Adc, Check, Close, Edit, Ekko, Jungle, Label } from "@/ui/icons";
+import {Close} from "@/ui/icons/close";
+import {Check} from "@/ui/icons/check";
+import {Ekko} from "@/ui/icons/ekko";
+import {Edit} from "@/ui/icons/edit";
+import {Adc} from "@/ui/icons/adc";
+import {Label} from "@/ui/icons/label";
+import {Jungle} from "@/ui/icons/jungle";
 
 type BoostOptionsProps = {};
 

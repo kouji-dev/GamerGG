@@ -6,7 +6,8 @@ import {getStatusCls} from "@/ui/utils/status";
 import {Button, Typography} from "@/ui";
 import Link from "next/link";
 import {Avatar} from "@/ui/Avatar";
-import {Copy} from "@/ui/icons";
+
+import {Copy} from "@/ui/icons/copy";
 
 type OrderCardProps = {
     id: any

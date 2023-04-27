@@ -1,9 +1,9 @@
 import {Card, CardHeader} from "@/ui/Card";
 import {Typography} from "@/ui";
-import {Group} from "@/ui/icons";
 import {Avatar} from "@/ui/Avatar";
 import {Chip} from "@/ui/Chip";
 import Link from "next/link";
+import {Group} from "@/ui/icons/group";
 
 const BOOSTERS = [
     {name: 'DUOLEVELING', rank: 1, game: 'lol', systemRank: 'legend'},

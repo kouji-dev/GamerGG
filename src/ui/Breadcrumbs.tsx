@@ -1,6 +1,6 @@
 import {FC, Fragment} from "react";
-import {KeyboardArrowRight} from "@/ui/icons";
 import {Typography} from "@/ui/Typography";
+import {KeyboardArrowRight} from "@/ui/icons/keyboardArrowRight";
 
 export type BreadcrumbsProps = {
     items?: string[];

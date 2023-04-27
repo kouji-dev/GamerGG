@@ -1,6 +1,7 @@
 import {Card, CardHeader} from "@/ui/Card";
 import {Typography} from "@/ui";
-import {Person} from "@/ui/icons";
+
+import {Person} from "@/ui/icons/person";
 
 export const ActiveBoost = () => {
     return (

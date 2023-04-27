@@ -2,8 +2,9 @@ import React, {FC, PropsWithChildren, useRef, useState} from "react";
 import clsx from "clsx";
 import {CommonUiComponentProps} from "@/ui/common";
 import {Typography} from "@/ui/Typography";
-import {KeyboardArrowDown, KeyboardArrowUp} from "@/ui/icons";
 import {Portal} from "@/ui/Portal";
+import {KeyboardArrowDown} from "@/ui/icons/keyboardArrowDown";
+import {KeyboardArrowUp} from "@/ui/icons/keyboardArrowUp";
 
 type DropdownVariant = "default" | "secondary";
 

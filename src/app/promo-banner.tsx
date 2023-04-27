@@ -1,7 +1,8 @@
 "use client";
 import { FC } from "react";
 import { Typography } from "@/ui";
-import { Compaign } from "@/ui/icons";
+
+import {Compaign} from "@/ui/icons/compaign";
 
 export const PromoBanner: FC<{}> = () => {
   return (

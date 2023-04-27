@@ -1,7 +1,6 @@
 // middleware.ts
 import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
-import { getToken } from "next-auth/jwt";
 
 // This function can be marked `async` if using `await` inside
 

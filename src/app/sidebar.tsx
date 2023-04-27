@@ -1,7 +1,11 @@
 "use client";
 import {FC} from "react";
-import {Discord, Facebook, Instagram, Menu, Support} from "@/ui/icons";
 import Link from "next/link";
+import {Facebook} from "@/ui/icons/facebook";
+import {Instagram} from "@/ui/icons/instagram";
+import {Discord} from "@/ui/icons/discord";
+import {Menu} from "@/ui/icons/menu";
+import {Support} from "@/ui/icons/support";
 
 export const Sidebar: FC<{}> = () => {
     return (

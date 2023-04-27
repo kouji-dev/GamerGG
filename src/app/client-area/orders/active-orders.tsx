@@ -2,8 +2,9 @@
 import { OrderCard } from "@/app/client-area/orders/order-card";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-import { ArrowBack, ArrowForward } from "@/ui/icons";
 import { useRef } from "react";
+import {ArrowBack} from "@/ui/icons/arrowBack";
+import {ArrowForward} from "@/ui/icons/arrowForward";
 
 // configure Swiper to use modules
 

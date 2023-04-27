@@ -1,8 +1,10 @@
 import {FC} from "react";
 import {Card, CardHeader} from "@/ui/Card";
 import {Button, Typography} from "@/ui";
-import {CardGift, Person, Send} from "@/ui/icons";
 import {Input} from "@/ui/Input";
+import {Person} from "@/ui/icons/person";
+import {Send} from "@/ui/icons/send";
+import {CardGift} from "@/ui/icons/cardGift";
 
 type BoostChatProps = {}
 

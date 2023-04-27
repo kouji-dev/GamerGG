@@ -2,9 +2,14 @@ import { FC } from "react";
 import { Card } from "@/ui/Card";
 import { Avatar } from "@/ui/Avatar";
 import { Button, Typography } from "@/ui";
-import { ArrowRight, Copy, CreditCard, Delete, Edit, Place } from "@/ui/icons";
 import { Chip } from "@/ui/Chip";
 import { getStatusCls } from "@/ui/utils/status";
+import {Delete} from "@/ui/icons/delete";
+import {Edit} from "@/ui/icons/edit";
+import {ArrowRight} from "@/ui/icons/arrowRight";
+import {Place} from "@/ui/icons/place";
+import {Copy} from "@/ui/icons/copy";
+import {CreditCard} from "@/ui/icons/creditCard";
 
 type BoostOverviewProps = {};
 

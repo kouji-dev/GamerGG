@@ -6,7 +6,6 @@ import {AUTH_OPTIONS} from "@/app/api/auth/[...nextauth]/route";
 
 export default async function AuthPage() {
     const session = await getServerSession(AUTH_OPTIONS);
-    console.log(session);
   return (
     <div className="w-full h-full relative">
       <Image

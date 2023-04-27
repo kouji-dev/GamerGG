@@ -3,8 +3,8 @@ import clsx from "clsx";
 import { CommonUiComponentProps } from "@/ui/common";
 import { Modifier, usePopper } from "react-popper";
 import * as PopperJS from "@popperjs/core";
-import { TooltipArrowUp } from "@/ui/icons";
 import { useClickOutside } from "@/ui/utils/use-click-outside";
+import {TooltipArrowUp} from "@/ui/icons/tooltipArrowUp";
 
 type PopoverVariant = "default" | "secondary";
 

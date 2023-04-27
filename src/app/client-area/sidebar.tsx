@@ -2,17 +2,15 @@
 import {FC} from "react";
 import {Typography} from "@/ui/Typography";
 import {Button} from "@/ui";
-import {
-    DashboardTwoTone,
-    Discord,
-    Facebook,
-    Instagram,
-    PaidTwoTone,
-    PeopleTwoTone,
-    RequestQuoteTwoTone
-} from "@/ui/icons";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
+import {Facebook} from "@/ui/icons/facebook";
+import {Instagram} from "@/ui/icons/instagram";
+import {Discord} from "@/ui/icons/discord";
+import {DashboardTwoTone} from "@/ui/icons/dashboardTwoTone";
+import {PaidTwoTone} from "@/ui/icons/paidTwoTone";
+import {PeopleTwoTone} from "@/ui/icons/peopleTwoTone";
+import {RequestQuoteTwoTone} from "@/ui/icons/requestQuoteTwoTone";
 
 export const Sidebar: FC<{}> = () => {
     return (

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prod": "yarn run db:migration:prod & next build",
+    "prod": "yarn run db:sync & yarn run db:migration:prod & next build",
     "start": "next start",
     "lint": "next lint",
     "db:format": "prisma format",

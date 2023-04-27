@@ -1,6 +1,7 @@
 import {Card, CardHeader} from "@/ui/Card";
 import {Typography} from "@/ui";
-import {Groups} from "@/ui/icons";
+
+import {Groups} from "@/ui/icons/groups";
 
 export const UserSpent = () => {
     return (

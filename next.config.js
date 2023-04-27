@@ -5,8 +5,9 @@ const nextConfig = {
     domains: ['cdn.discordapp.com',  'lh3.googleusercontent.com']
   },
   experimental: {
-    appDir: true
-  }
+    appDir: true,
+    serverComponentsExternalPackages: ['@prisma/client']
+  },
 }
 
 module.exports = nextConfig

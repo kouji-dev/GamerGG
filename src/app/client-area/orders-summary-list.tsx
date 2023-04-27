@@ -6,8 +6,9 @@ import { Avatar } from "@/ui/Avatar";
 import { Button, Typography } from "@/ui";
 import { Chip } from "@/ui/Chip";
 import { getStatusCls } from "@/ui/utils/status";
-import { Menu, PaidTwoTone } from "@/ui/icons";
 import { Card, CardHeader } from "@/ui/Card";
+import {PaidTwoTone} from "@/ui/icons/paidTwoTone";
+import {Menu} from "@/ui/icons/menu";
 
 export const OrdersSummaryList = () => {
   const columns = useMemo<Array<Column>>(
