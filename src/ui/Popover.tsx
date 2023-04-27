@@ -25,7 +25,6 @@ export const Popover: FC<PropsWithChildren<PopoverProps>> = (props) => {
   const [arrowElement, setArrow] = useState<any>(null);
   const [show, setShow] = useState<any>(false);
   const { styles, attributes } = usePopper(anchorEl, popperElement, {
-    placement: "bottom",
     modifiers: [
       {
         name: "arrow",

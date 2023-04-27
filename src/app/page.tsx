@@ -6,10 +6,10 @@ import { Square } from "@/ui/shapes/square";
 import { Line } from "@/ui/shapes/line";
 import homeStyles from "../../public/home.module.css";
 import Link from "next/link";
-import {Sidebar} from "@/pages/sidebar";
-import {Header} from "@/pages/header";
-import {PromoBanner} from "@/pages/promo-banner";
-import RootLayout from "@/pages/layout";
+import {Sidebar} from "@/app/sidebar";
+import {Header} from "@/app/header";
+import {PromoBanner} from "@/app/promo-banner";
+import RootLayout from "@/app/layout";
 
 export const metadata = {
   title: "GamingGG",
@@ -96,7 +96,7 @@ export default function Home() {
             <Line className="absolute top-10 right-0" size="large" gradient />
             <Line className="absolute top-12 right-0" size="medium" gradient />
             <Line className="absolute top-14 right-0" size="small" gradient />
-            <div className="absolute bottom-0 right-0 left-0">
+            <div className="absolute bottom-0 right-0 left-0 -z-10">
               <AvalancheShape />
               <LandingPageAboutUs />
             </div>

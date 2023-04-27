@@ -4,7 +4,6 @@ import GoogleProvider from "next-auth/providers/google";
 import {PrismaAdapter} from "@next-auth/prisma-adapter";
 import {prisma} from "@prisma";
 
-
 const DISCORD_SCOPES = ["identify", "email"].join(" ");
 export const AUTH_OPTIONS: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -81,4 +80,6 @@ export const AUTH_OPTIONS: NextAuthOptions = {
   },
 };
 
-export default NextAuth(AUTH_OPTIONS);
+const handler =  NextAuth(AUTH_OPTIONS);
+
+export { handler as GET, handler as POST };

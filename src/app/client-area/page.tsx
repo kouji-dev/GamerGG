@@ -1,10 +1,10 @@
-import {ActiveBoost} from "@/pages/client-area/active-boost";
-import {UserSpent} from "@/pages/client-area/user-spent";
-import {TopBoosters} from "@/pages/client-area/top-boosters";
-import {OngoingOrder} from "@/pages/client-area/ongoing-order";
-import {DiscordServer} from "@/pages/client-area/discord-server";
-import {OrdersSummaryList} from "@/pages/client-area/orders-summary-list";
-import ClientAreaLayout from "@/pages/client-area/layout";
+import {ActiveBoost} from "@/app/client-area/active-boost";
+import {UserSpent} from "@/app/client-area/user-spent";
+import {TopBoosters} from "@/app/client-area/top-boosters";
+import {OngoingOrder} from "@/app/client-area/ongoing-order";
+import {DiscordServer} from "@/app/client-area/discord-server";
+import {OrdersSummaryList} from "@/app/client-area/orders-summary-list";
+import ClientAreaLayout from "@/app/client-area/layout";
 
 export default function ClientAreaPage() {
   return (

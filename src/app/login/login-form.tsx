@@ -1,21 +1,21 @@
-////"use client";;
+"use client";
 import { Button, Typography } from "@/ui";
 import { DiscordLogin, FacebookLogin, GoogleLogin } from "@/ui/icons";
 import { signIn } from "next-auth/react";
 
 export const LoginForm = () => {
   const login = async (provider: string) => {
-    await signIn(provider);
+    signIn(provider);
   };
 
   const google = async () => {
-    await login("google");
+    login("google");
   };
   const discord = async () => {
-    await login("discord");
+    login("discord");
   };
   const facebook = async () => {
-    await login("facebook");
+    login("facebook");
   };
   return (
     <form className="absolute top-[30%] left-[40%] flex flex-col gap-lg items-center justify-center p-lg bg-metal rounded-md w-[360px]">

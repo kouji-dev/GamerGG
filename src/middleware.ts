@@ -34,11 +34,11 @@ export const middleware = withAuth(
   },
   {
     callbacks: {
-      async authorized() {
+      async authorized({ req, token }) {
         // This is a work-around for handling redirect on auth pages.
         // We return true here so that the middleware function above
         // is always called.
-        return true;
+          return true;
       },
     },
   }

@@ -1,7 +1,7 @@
-import { BoostOverview } from "@/pages/client-area/orders/[id]/boost-overview";
-import { BoostChat } from "@/pages/client-area/orders/[id]/boost-chat";
-import { BoostOptions } from "@/pages/client-area/orders/[id]/boost-options";
-import ClientAreaLayout from "@/pages/client-area/layout";
+import { BoostOverview } from "@/app/client-area/orders/[id]/boost-overview";
+import { BoostChat } from "@/app/client-area/orders/[id]/boost-chat";
+import { BoostOptions } from "@/app/client-area/orders/[id]/boost-options";
+import ClientAreaLayout from "@/app/client-area/layout";
 
 export default function ClientAreaOrderDetailPage() {
   return (

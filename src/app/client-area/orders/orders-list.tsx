@@ -1,15 +1,37 @@
-//"use client";
+"use client";
 import { Table } from "@/ui/Table";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Column } from "react-table";
 import { Avatar } from "@/ui/Avatar";
 import { Button, Typography } from "@/ui";
 import { Chip } from "@/ui/Chip";
 import { getStatusCls } from "@/ui/utils/status";
-import { Menu, PaidTwoTone } from "@/ui/icons";
+import { Eye, Menu, Plus, Search } from "@/ui/icons";
 import { Card, CardHeader } from "@/ui/Card";
+import { Input } from "@/ui/Input";
+import { Dropdown, DropDownItem } from "@/ui/Dropdown";
+import { Popover } from "@/ui/Popover";
+import Link from "next/link";
 
-export const OrdersSummaryList = () => {
+const Actions = ({ id }: any) => {
+  const [ref, setRef] = useState<any>(null);
+  return (
+    <>
+      <Button ref={setRef} leftIcon={<Menu className="!text-floral" />} />
+      <Popover anchorEl={ref}>
+        <Link
+          href={`/client-area/orders/${id}`}
+          className="flex items-center gap-sm"
+        >
+          <Eye />
+          <Typography>View</Typography>
+        </Link>
+      </Popover>
+    </>
+  );
+};
+
+export const OrdersList = () => {
   const columns = useMemo<Array<Column>>(
     () => [
       {
@@ -20,7 +42,6 @@ export const OrdersSummaryList = () => {
         ),
         accessor: "game",
         Cell: ({ value }) => <Avatar label={value} className="bg-purple" />,
-        maxWidth: 80,
       },
       {
         Header: () => (
@@ -32,8 +53,6 @@ export const OrdersSummaryList = () => {
         Cell: ({ value }) => (
           <Typography variant="table-body">{value}</Typography>
         ),
-        maxWidth: 400,
-        width: 220,
       },
       {
         Header: () => (
@@ -67,7 +86,28 @@ export const OrdersSummaryList = () => {
         Cell: ({ value }) => (
           <Chip label={value} className={getStatusCls(value)} />
         ),
-        width: 100,
+      },
+      {
+        Header: () => (
+          <Typography variant="table-head" transform="uppercase" weight="bold">
+            price
+          </Typography>
+        ),
+        accessor: "price",
+        Cell: ({ value }) => (
+          <Typography variant="table-body">{value}</Typography>
+        ),
+      },
+      {
+        Header: () => (
+          <Typography variant="table-head" transform="uppercase" weight="bold">
+            created at
+          </Typography>
+        ),
+        accessor: "createdAt",
+        Cell: ({ value }) => (
+          <Typography variant="table-body">{value}</Typography>
+        ),
       },
       {
         Header: () => (
@@ -76,7 +116,7 @@ export const OrdersSummaryList = () => {
           </Typography>
         ),
         accessor: "actions",
-        Cell: () => <Button leftIcon={<Menu className="!text-floral" />} />,
+        Cell: ({ cell }: any) => <Actions id={cell.row.original.id} />,
       },
     ],
     []
@@ -88,13 +128,17 @@ export const OrdersSummaryList = () => {
         summary: "Promotion from gold 1",
         id: "lol-1232",
         booster: "Duoleveling",
+        price: "$14.56",
+        createdAt: new Date().toDateString(),
         status: "COMPLETED",
       },
       {
         game: "lol",
         summary: "Promotion from gold 1",
-        id: "lol-1232",
+        id: "lol-1233",
         booster: "Duoleveling",
+        price: "$14.56",
+        createdAt: new Date().toDateString(),
         status: "UNPAID",
       },
       {
@@ -102,13 +146,17 @@ export const OrdersSummaryList = () => {
         summary: "Promotion from gold 1",
         id: "lol-1232",
         booster: "Duoleveling",
-        status: "INPROGRESS",
+        price: "$14.56",
+        createdAt: new Date().toDateString(),
+        status: "IN PROGRESS",
       },
       {
         game: "lol",
         summary: "Promotion from gold 1",
         id: "lol-1232",
         booster: "Duoleveling",
+        price: "$14.56",
+        createdAt: new Date().toDateString(),
         status: "COMPLETED",
       },
       {
@@ -116,6 +164,8 @@ export const OrdersSummaryList = () => {
         summary: "Promotion from gold 1",
         id: "lol-1232",
         booster: "Duoleveling",
+        price: "$14.56",
+        createdAt: new Date().toDateString(),
         status: "COMPLETED",
       },
       {
@@ -123,6 +173,8 @@ export const OrdersSummaryList = () => {
         summary: "Promotion from gold 1",
         id: "lol-1232",
         booster: "Duoleveling",
+        price: "$14.56",
+        createdAt: new Date().toDateString(),
         status: "COMPLETED",
       },
       {
@@ -130,6 +182,8 @@ export const OrdersSummaryList = () => {
         summary: "Promotion from gold 1",
         id: "lol-1232",
         booster: "Duoleveling",
+        price: "$14.56",
+        createdAt: new Date().toDateString(),
         status: "COMPLETED",
       },
     ],
@@ -137,18 +191,39 @@ export const OrdersSummaryList = () => {
   );
   return (
     <Card className="rounded flex-1">
-      <CardHeader>
-        <Typography variant="h6" weight="bold">
-          Orders
-        </Typography>
-        <PaidTwoTone />
+      <CardHeader className="bg-filter-200 -m-4 p-4 flex flex-col gap-[10px]">
+        <div className="w-full flex justify-between">
+          <Typography variant="h5" weight="bold">
+            Orders
+            <Typography variant="subtitle" className="align-super ml-2">
+              ({data.length})
+            </Typography>
+          </Typography>
+          <Button label="Order" leftIcon={<Plus className="!text-floral" />} />
+        </div>
+        <div className="w-full flex justify-between">
+          <Input
+            leftIcon={<Search className="!text-floral" />}
+            type="text"
+            placeholder="Search"
+          />
+          <Dropdown>
+            <DropDownItem>League of Legends</DropDownItem>
+          </Dropdown>
+        </div>
       </CardHeader>
       <Table
         wrapperClassName="mt-4"
-        bodyClassName="h-[174px]"
+        bodyClassName="h-[420px]"
         columns={columns}
         data={data}
       />
+      <div>
+        <Dropdown variant="secondary" label="10">
+          <DropDownItem>10</DropDownItem>
+          <DropDownItem>20</DropDownItem>
+        </Dropdown>
+      </div>
     </Card>
   );
 };

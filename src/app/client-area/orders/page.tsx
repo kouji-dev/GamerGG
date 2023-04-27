@@ -1,6 +1,6 @@
-import { OrdersList } from "@/pages/client-area/orders/orders-list";
-import { ActiveOrders } from "@/pages/client-area/orders/active-orders";
-import ClientAreaLayout from "@/pages/client-area/layout";
+import { OrdersList } from "@/app/client-area/orders/orders-list";
+import { ActiveOrders } from "@/app/client-area/orders/active-orders";
+import ClientAreaLayout from "@/app/client-area/layout";
 
 export default function ClientAreaOrdersPage() {
   return (

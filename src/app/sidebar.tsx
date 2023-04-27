@@ -1,4 +1,4 @@
-//"use client";
+"use client";
 import {FC} from "react";
 import {Discord, Facebook, Instagram, Menu, Support} from "@/ui/icons";
 import Link from "next/link";

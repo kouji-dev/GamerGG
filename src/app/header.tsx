@@ -1,15 +1,16 @@
-//"use client";
+"use client";
 import { FC } from "react";
 import Link from "next/link";
 import { Typography } from "@/ui";
 import { Badge } from "@/ui/Badge";
-import { LoginBar } from "@/pages/login-bar";
+import { LoginBar } from "@/app/login-bar";
+import {SessionProvider} from "next-auth/react";
 
 export const Header: FC<{}> = () => {
   return (
     <div className="flex items-center">
       <NavBar />
-      <LoginBar />
+        <SessionProvider>{<LoginBar />}</SessionProvider>
     </div>
   );
 };
