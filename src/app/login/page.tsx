@@ -17,11 +17,6 @@ export default async function AuthPage() {
     console.log(session);
   return (
     <div className="w-full h-full relative">
-      <Image
-        className="w-full h-full object-cover"
-        alt="auth-wallpaper"
-        src={image}
-      />
       <LoginForm />
     </div>
   );
