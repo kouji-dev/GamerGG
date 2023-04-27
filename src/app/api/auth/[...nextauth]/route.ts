@@ -30,11 +30,6 @@ export const AUTH_OPTIONS: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async signIn({user, email, profile, account, credentials}) {
-      console.log('sign in')
-      console.log({user, email, profile, account, credentials})
-      return true;
-    },
     async session({ token, session }) {
       console.log('session')
       console.log({session, token})
@@ -51,25 +46,8 @@ export const AUTH_OPTIONS: NextAuthOptions = {
     },
     async jwt({ token, user }) {
       console.log('jwt')
-      const dbUser = await prisma.user.findFirst({
-        where: {
-          email: token.email,
-        },
-      });
-
-      if (!dbUser) {
-        if (user) {
-          token.id = user?.id;
-        }
-        return token;
-      }
-
-      return {
-        id: dbUser.id,
-        name: dbUser.name,
-        email: dbUser.email,
-        picture: dbUser.image,
-      };
+      console.log({token, user});
+      return token;
     },
   },
   session: {
