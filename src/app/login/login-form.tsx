@@ -1,16 +1,19 @@
 "use client";
 import { Button, Typography } from "@/ui";
-import {signIn} from "next-auth/react";
-import {FacebookLogin} from "@/ui/icons/facebookLogin";
-import {DiscordLogin} from "@/ui/icons/discordLogin";
-import {GoogleLogin} from "@/ui/icons/googleLogin";
+import { signIn } from "next-auth/react";
+import { FacebookLogin } from "@/ui/icons/facebookLogin";
+import { DiscordLogin } from "@/ui/icons/discordLogin";
+import { GoogleLogin } from "@/ui/icons/googleLogin";
 
 export const LoginForm = () => {
   const login = (provider: string) => {
-    signIn(provider)
+    signIn(provider, {
+      redirect: true,
+      callbackUrl: "/client-area",
+    });
   };
 
-  const google =  () => {
+  const google = () => {
     login("google");
   };
   const discord = () => {

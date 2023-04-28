@@ -1,9 +1,9 @@
-import React, { FC, PropsWithChildren, useEffect, useState } from "react";
+import React, {FC, PropsWithChildren, useEffect, useState} from "react";
 import clsx from "clsx";
-import { CommonUiComponentProps } from "@/ui/common";
-import { Modifier, usePopper } from "react-popper";
+import {CommonUiComponentProps} from "@/ui/common";
+import {Modifier, usePopper} from "react-popper";
 import * as PopperJS from "@popperjs/core";
-import { useClickOutside } from "@/ui/utils/use-click-outside";
+import {useClickOutside} from "@/ui/utils/use-click-outside";
 import {TooltipArrowUp} from "@/ui/icons/tooltipArrowUp";
 
 type PopoverVariant = "default" | "secondary";
@@ -29,14 +29,14 @@ export const Popover: FC<PropsWithChildren<PopoverProps>> = (props) => {
       {
         name: "arrow",
         options: {
-          element: arrowElement
+          element: arrowElement,
         },
       },
       {
         name: "flip",
         enabled: true,
         options: {
-          rootBoundary: 'body',
+          rootBoundary: "body",
         },
       },
     ],
@@ -71,6 +71,7 @@ export const Popover: FC<PropsWithChildren<PopoverProps>> = (props) => {
       ref={setPopperElement}
       style={styles.popper}
       {...attributes.popper}
+      className="z-20"
     >
       {show && <TooltipArrowUp ref={setArrow} className="!text-metal" />}
       {show && content}
