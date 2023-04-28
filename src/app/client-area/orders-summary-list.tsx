@@ -1,5 +1,5 @@
 "use client";
-import { Table } from "@/ui/Table";
+import {Header, Table, Td} from "@/ui/Table";
 import { useMemo } from "react";
 import { Column } from "react-table";
 import { Avatar } from "@/ui/Avatar";
@@ -9,79 +9,50 @@ import { getStatusCls } from "@/ui/utils/status";
 import { Card, CardHeader } from "@/ui/Card";
 import {PaidTwoTone} from "@/ui/icons/paidTwoTone";
 import {Menu} from "@/ui/icons/menu";
+import {createColumnHelper} from "@tanstack/table-core";
+import {Actions, Order} from "@/app/client-area/orders/orders-list";
 
 export const OrdersSummaryList = () => {
-  const columns = useMemo<Array<Column>>(
-    () => [
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Game
-          </Typography>
-        ),
-        accessor: "game",
-        Cell: ({ value }) => <Avatar label={value} className="bg-purple" />,
-        maxWidth: 80,
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Summary
-          </Typography>
-        ),
-        accessor: "summary",
-        Cell: ({ value }) => (
-          <Typography variant="table-body">{value}</Typography>
-        ),
-        maxWidth: 400,
-        width: 220,
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Id
-          </Typography>
-        ),
-        accessor: "id",
-        Cell: ({ value }) => (
-          <Typography variant="table-body">{value}</Typography>
-        ),
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Booster
-          </Typography>
-        ),
-        accessor: "booster",
-        Cell: ({ value }) => (
-          <Typography variant="table-body">{value}</Typography>
-        ),
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Status
-          </Typography>
-        ),
-        accessor: "status",
-        Cell: ({ value }) => (
-          <Chip label={value} className={getStatusCls(value)} />
-        ),
-        width: 100,
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Actions
-          </Typography>
-        ),
-        accessor: "actions",
-        Cell: () => <Button leftIcon={<Menu className="!text-floral" />} />,
-      },
-    ],
-    []
-  );
+    const columnHelper = createColumnHelper<Order>();
+    const columns = useMemo(
+        () => [
+            columnHelper.accessor("game", {
+                cell: (cell) => (
+                    <Avatar label={cell.getValue()} className="bg-purple" />
+                ),
+                header: () => <Header label="Game" />,
+            }),
+            columnHelper.accessor("summary", {
+                cell: (cell) => <Td value={cell.getValue()} />,
+                header: () => <Header label="summary" />,
+            }),
+            columnHelper.accessor("id", {
+                cell: (cell) => <Td value={cell.getValue()} />,
+                header: () => <Header label="id" />,
+            }),
+            columnHelper.accessor("booster", {
+                cell: (cell) => (
+                    <Avatar label={cell.getValue().substring(0, 1)} className="bg-purple" />
+                ),
+                header: () => <Header label="booster" />,
+            }),
+            columnHelper.accessor("status", {
+                cell: (cell) => (
+                    <Chip
+                        label={cell.getValue()}
+                        className={getStatusCls(cell.getValue())}
+                    />
+                ),
+                header: () => <Header label="status" />,
+            }),
+            columnHelper.display({
+                id: "actions",
+                cell: (cell) => <Actions id={cell.row.original.id} />,
+                header: () => <Header label="actions" />,
+            }),
+        ],
+        [columnHelper]
+    );
   const data = useMemo(
     () => [
       {

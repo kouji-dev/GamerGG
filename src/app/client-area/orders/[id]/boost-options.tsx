@@ -82,7 +82,7 @@ export const BoostOptions: FC<BoostOptionsProps> = (props) => {
           </div>
         </div>
       </div>
-      <hr className="w-full border-1 border-black" />
+      <hr className="w-full border-t-1 border-b-2 border-dashed border-black" />
       <div className="flex flex-col gap-lg">
         <div className="flex justify-between">
           <Typography variant="h6" weight="bold">

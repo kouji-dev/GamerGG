@@ -2,6 +2,7 @@
 @tailwind utilities;
 /* Firefox */
 * {
+    @apply box-border;
     scrollbar-width: thin;
     scrollbar-color: #EE204D;
 }

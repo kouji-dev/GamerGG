@@ -1,7 +1,6 @@
 "use client";
-import { Table } from "@/ui/Table";
+import { Header, Table, Td } from "@/ui/Table";
 import { useMemo, useState } from "react";
-import { Column } from "react-table";
 import { Avatar } from "@/ui/Avatar";
 import { Button, Typography } from "@/ui";
 import { Chip } from "@/ui/Chip";
@@ -11,12 +10,13 @@ import { Input } from "@/ui/Input";
 import { Dropdown, DropDownItem } from "@/ui/Dropdown";
 import { Popover } from "@/ui/Popover";
 import Link from "next/link";
-import {Menu} from "@/ui/icons/menu";
-import {Search} from "@/ui/icons/search";
-import {Eye} from "@/ui/icons/eye";
-import {Plus} from "@/ui/icons/plus";
+import { Menu } from "@/ui/icons/menu";
+import { Search } from "@/ui/icons/search";
+import { Eye } from "@/ui/icons/eye";
+import { Plus } from "@/ui/icons/plus";
+import { createColumnHelper } from "@tanstack/table-core";
 
-const Actions = ({ id }: any) => {
+export const Actions = ({ id }: any) => {
   const [ref, setRef] = useState<any>(null);
   return (
     <>
@@ -34,95 +34,64 @@ const Actions = ({ id }: any) => {
   );
 };
 
+export type Order = {
+  game: string;
+  summary: string;
+  id: string;
+  booster: string;
+  price: string;
+  createdAt: string;
+  status: string;
+};
+
 export const OrdersList = () => {
-  const columns = useMemo<Array<Column>>(
+  const columnHelper = createColumnHelper<Order>();
+  const columns = useMemo(
     () => [
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Game
-          </Typography>
+      columnHelper.accessor("game", {
+        cell: (cell) => (
+          <Avatar label={cell.getValue()} className="bg-purple" />
         ),
-        accessor: "game",
-        Cell: ({ value }) => <Avatar label={value} className="bg-purple" />,
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Summary
-          </Typography>
+        header: () => <Header label="Game" />,
+      }),
+      columnHelper.accessor("summary", {
+        cell: (cell) => <Td value={cell.getValue()} />,
+        header: () => <Header label="summary" />,
+      }),
+      columnHelper.accessor("id", {
+        cell: (cell) => <Td value={cell.getValue()} />,
+        header: () => <Header label="id" />,
+      }),
+      columnHelper.accessor("booster", {
+        cell: (cell) => (
+          <Avatar label={cell.getValue().substring(0, 1)} className="bg-purple" />
         ),
-        accessor: "summary",
-        Cell: ({ value }) => (
-          <Typography variant="table-body">{value}</Typography>
+        header: () => <Header label="booster" />,
+      }),
+      columnHelper.accessor("status", {
+        cell: (cell) => (
+          <Chip
+            label={cell.getValue()}
+            className={getStatusCls(cell.getValue())}
+          />
         ),
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Id
-          </Typography>
-        ),
-        accessor: "id",
-        Cell: ({ value }) => (
-          <Typography variant="table-body">{value}</Typography>
-        ),
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Booster
-          </Typography>
-        ),
-        accessor: "booster",
-        Cell: ({ value }) => (
-          <Typography variant="table-body">{value}</Typography>
-        ),
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Status
-          </Typography>
-        ),
-        accessor: "status",
-        Cell: ({ value }) => (
-          <Chip label={value} className={getStatusCls(value)} />
-        ),
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            price
-          </Typography>
-        ),
-        accessor: "price",
-        Cell: ({ value }) => (
-          <Typography variant="table-body">{value}</Typography>
-        ),
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            created at
-          </Typography>
-        ),
-        accessor: "createdAt",
-        Cell: ({ value }) => (
-          <Typography variant="table-body">{value}</Typography>
-        ),
-      },
-      {
-        Header: () => (
-          <Typography variant="table-head" transform="uppercase" weight="bold">
-            Actions
-          </Typography>
-        ),
-        accessor: "actions",
-        Cell: ({ cell }: any) => <Actions id={cell.row.original.id} />,
-      },
+        header: () => <Header label="status" />,
+      }),
+      columnHelper.accessor("price", {
+        cell: (cell) => <Td value={cell.getValue()} />,
+        header: () => <Header label="price" />,
+      }),
+      columnHelper.accessor("createdAt", {
+        cell: (cell) => <Td value={cell.getValue()} />,
+        header: () => <Header label="created At" />,
+      }),
+      columnHelper.display({
+        id: "actions",
+        cell: (cell) => <Actions id={cell.row.original.id} />,
+        header: () => <Header label="actions" />,
+      }),
     ],
-    []
+    [columnHelper]
   );
   const data = useMemo(
     () => [

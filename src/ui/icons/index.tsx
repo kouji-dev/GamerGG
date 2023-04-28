@@ -1,4 +1,3 @@
-"use client";
 import {cloneElement, SVGProps} from "react";
 import {CommonUiComponentProps} from "@/ui/common";
 import clsx from "clsx";
